@@ -77,12 +77,17 @@
 
         /* Section Title */
         .section-title {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: #1e90ff;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 8px;
+            line-height: 1.6;
+            background-color: rgba(30, 144, 255, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            border-right: 4px solid #1e90ff;
         }
 
         /* Grid Section */
@@ -125,7 +130,7 @@
         }
 
         /* Buttons */
-        .btn {
+        .btn, .btn-book {
             background-color: var(--accent-blue);
             color: white;
             border: none;
@@ -141,7 +146,7 @@
             transition: background 0.3s;
         }
 
-        .btn:hover {
+        .btn:hover, .btn-book:hover {
             background-color: var(--accent-hover);
         }
 
@@ -201,6 +206,19 @@
         .telegram-btn { background-color: #0088cc; }
         .whatsapp-btn { background-color: #25d366; }
 
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
         @media (max-width: 600px) {
             .grid-container {
                 grid-template-columns: 1fr;
@@ -222,9 +240,9 @@
         <p>نسهل لك إجراءات المعاملات بأعلى سرعة وأقل تكلفة</p>
     </div>
 
-    <!-- Section Title -->
+    <!-- Section Title (النص المعدل) -->
     <div class="section-title">
-        🚍 قسم رحلات السيارات والنقل الخاص
+        ✨ كل وجهة أقرب / خدمات سفر متميزة / برامج سياحية منظمة / خدمات شحن آمنة / خدمات نقل متكاملة / كل ما عليك هو تحديد وجهتك أو شحنتك وعلينا الباقي 😍
     </div>
 
     <!-- Cards Grid -->
@@ -233,9 +251,9 @@
         <div class="card">
             <div>
                 <h3>نقل ركاب بأحدث السيارات والأسطول الحديث 🚌</h3>
-                <p>رحلات يومية ومستمرة من اليمن إلى عمان، السعودية والإارات والعكس. حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.</p>
+                <p>رحلات يومية ومستمرة من اليمن إلى عمان، السعودية والإمارات والعكس. حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.</p>
             </div>
-            <a href="#" class="btn">استفسر عن الرحلات</a>
+            <a href="https://wa.me/967782111532" class="btn-book">استفسر عن الرحلات</a>
         </div>
 
         <!-- Card 2 -->
@@ -243,7 +261,7 @@
             <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600" alt="سيارة فورويل" class="card-img">
             <h3>رحلات آمنة وممتعة (سيارات فورويل حديثة) 🚘</h3>
             <p>نقدم لكم رحلات آمنة وممتعة بأحدث سيارات الدفع الرباعي الفاخرة. تحقق رضاكم ونكسب ثقتكم دائماً.</p>
-            <a href="#" class="btn">احجز رحلتك الآن</a>
+            <a href="https://wa.me/967782111532" class="btn">احجز رحلتك الآن</a>
         </div>
     </div>
 
@@ -253,15 +271,25 @@
         <div class="full-card-content">
             <h3>سيارات حديثة وسائقون محترفون 🛣️</h3>
             <p>راحتك في رحلتك تبدأ من أول خطوة! سفر مريح وأسعار تنافسية مصممة خصيصاً لراحتك.</p>
-            <a href="#" class="btn">طلب سيارة وسائق</a>
+            <a href="https://wa.me/967782111532" class="btn">طلب سيارة وسائق</a>
         </div>
     </div>
 
-    <!-- Floating Buttons -->
+    <!-- الأزرار العائمة -->
     <div class="floating-buttons">
-        <a href="https://t.me/" class="float-btn telegram-btn" target="_blank">✈️</a>
-        <a href="https://wa.me/" class="float-btn whatsapp-btn" target="_blank">💬</a>
+        <a href="https://t.me/Offices_AlWalidi_bot" class="float-btn telegram-btn" target="_blank">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.38-.49 1.07-.75 4.19-1.82 6.98-3.02 8.38-3.6 3.98-1.66 4.81-1.95 5.35-1.96.12 0 .38.03.55.17.14.12.18.28.2.45-.02.07-.02.13-.03.22z"/></svg>
+        </a>
+        <a href="https://wa.me/967782111532" class="float-btn whatsapp-btn" target="_blank">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+        </a>
     </div>
+
+    <!-- الفوتر Footer -->
+    <footer>
+        <p>© 2026 شركة ومكاتب الوليدي للسفريات والنقل الدولي | جميع الحقوق محفوظة</p>
+        <p>782111532 :للتواصل المباشر</p>
+    </footer>
 
 </body>
 </html>
