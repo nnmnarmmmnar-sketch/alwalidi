@@ -1,366 +1,267 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مجموعة الوليدي للشحن والسفريات والنقل الدولي</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة ومكاتب الوليدي للسفريات والنقل والشحن</title>
+    <style>
+        :root {
+            --bg-color: #0d1b2a;
+            --card-bg: #1b263b;
+            --accent-blue: #0084ff;
+            --accent-hover: #0066cc;
+            --text-main: #ffffff;
+            --text-sub: #e0e1dd;
+            --text-muted: #778da9;
+        }
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Tajawal', sans-serif;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    body {
-      background-color: #0f172a;
-      color: #f8fafc;
-      padding: 15px 10px 80px 10px;
-    }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .alwalidi-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 15px 10px;
+            margin-bottom: 15px;
+        }
 
-    /* بنر الصورة الرئيسي الخاص بالصين */
-    .top-china-banner {
-      width: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 25px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-      border: 1px solid #334155;
-      background-color: #1e293b;
-    }
+        .header h1 {
+            color: #1e90ff;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
 
-    .top-china-banner img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
+        .header p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
 
-    header {
-      text-align: center;
-      padding: 10px 10px 25px;
-    }
+        /* Banner Card */
+        .hero-banner {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1000') center/cover no-repeat;
+            border-radius: 12px;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
 
-    header h1 {
-      color: #38bdf8;
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-    }
+        .hero-banner h2 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
 
-    header p {
-      color: #94a3b8;
-      font-size: 0.95rem;
-    }
+        .hero-banner p {
+            font-size: 0.8rem;
+            color: #d1d5db;
+        }
 
-    .section-title {
-      color: #38bdf8;
-      font-size: 1.4rem;
-      margin: 35px 0 15px;
-      padding-right: 10px;
-      border-right: 4px solid #0284c7;
-    }
+        /* Section Title */
+        .section-title {
+            font-size: 1.1rem;
+            color: #1e90ff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
+        /* Grid Section */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
 
-    .service-card {
-      background-color: #1e293b;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid #334155;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease;
-    }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-    .service-card:hover {
-      transform: translateY(-4px);
-    }
+        .card-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
 
-    .card-image {
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-      background-color: #0f172a;
-    }
+        .card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
 
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
+        .card p {
+            font-size: 0.78rem;
+            color: var(--text-sub);
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
 
-    .card-content {
-      padding: 18px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+        /* Buttons */
+        .btn {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            transition: background 0.3s;
+        }
 
-    .card-content h3 {
-      font-size: 1.15rem;
-      color: #f1f5f9;
-      margin-bottom: 8px;
-    }
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
 
-    .card-content p {
-      font-size: 0.88rem;
-      color: #94a3b8;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
+        /* Full Width Card */
+        .full-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
 
-    .btn-book {
-      display: block;
-      text-align: center;
-      background-color: #0284c7;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 10px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.9rem;
-    }
+        .full-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
 
-    .btn-book:hover {
-      background-color: #0369a1;
-    }
+        .full-card-content {
+            padding: 15px;
+        }
 
-    .floating-buttons {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 9999;
-    }
+        .full-card h3 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
 
-    .float-btn {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
+        .full-card p {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-bottom: 12px;
+        }
 
-    .float-whatsapp { background-color: #25d366; }
-    .float-telegram { background-color: #0088cc; }
+        /* Floating Action Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
 
-    .float-btn svg {
-      width: 26px;
-      height: 26px;
-      fill: currentColor;
-    }
+        .float-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
 
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 20px;
-      border-top: 1px solid #334155;
-      color: #64748b;
-      font-size: 0.85rem;
-    }
+        .telegram-btn { background-color: #0088cc; }
+        .whatsapp-btn { background-color: #25d366; }
 
-    @media (max-width: 600px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="alwalidi-container">
-
-    <!-- البنر العلوي: صورة الشحن -->
-    <div class="top-china-banner">
-      <img src="china.jpg" alt="مجموعة الوليدي للشحن الدولي من الصين إلى اليمن">
-      
-
-    <header>
-      <h1>مجموعة الوليدي للنقل الدولي والشحن والسفريات</h1>
-      <p>خدمات التأشيرات، رحلات النقل البري والسيارات، حجز الطيران، وشحن البضائع</p>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>شركة ومكاتب الوليدي للسفريات والنقل والشحن المحلي والدولي</h1>
+        <p>من اليمن إلى جميع أنحاء العالم والعكس | مكاتب التصدير والاستيراد والتخليص الجمركي</p>
     </header>
 
-    <!-- قسم خدمة السيارات والرحلات الخاصه -->
-    <h2 class="section-title">🚗 قسم رحلات السيارات والنقل الخاص</h2>
-    <div class="services-grid">
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        <h2>كل وجهة أقرب | خدمات سفر وشحن ونقل متكاملة</h2>
+        <p>نسهل لك إجراءات المعاملات بأعلى سرعة وأقل تكلفة</p>
+    </div>
 
-      <div class="service-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="رحلات آمنة وممتعة">
+    <!-- Section Title -->
+    <div class="section-title">
+        🚍 قسم رحلات السيارات والنقل الخاص
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div>
+                <h3>نقل ركاب بأحدث السيارات والأسطول الحديث 🚌</h3>
+                <p>رحلات يومية ومستمرة من اليمن إلى عمان، السعودية والإمارات والعكس. حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.</p>
+            </div>
+            <a href="#" class="btn">استفسر عن الرحلات</a>
         </div>
-        <div class="card-content">
-          <div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600" alt="سيارة فورويل" class="card-img">
             <h3>رحلات آمنة وممتعة (سيارات فورويل حديثة) 🚘</h3>
-            <p>
-              نقدم لكم رحلات آمنة وممتعة بأحدث سيارات الدفع الرباعي الفاخرة.<br>
-              <strong>نحقق رضاكم ونكسب ثقتكم دائماً.</strong>
-            </p>
-          </div>
-          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20حجز%20رحلة%20عبر%20سيارة%20خاصة" target="_blank">احجز رحلتك الآن</a>
+            <p>نقدم لكم رحلات آمنة وممتعة بأحدث سيارات الدفع الرباعي الفاخرة. تحقق رضاكم ونكسب ثقتكم دائماً.</p>
+            <a href="#" class="btn">احجز رحلتك الآن</a>
         </div>
-      </div>
+    </div>
 
-      <div class="service-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=800&q=80" alt="نقل ركاب">
-        </div>
-        <div class="card-content">
-          <div>
-            <h3>نقل ركاب بأحدث السيارات والأسطول الحديث 🚍</h3>
-            <p>
-              رحلات يومية ومستمرة من اليمن إلى عمان، السعودية، والإمارات والعكس.<br>
-              حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.
-            </p>
-          </div>
-          <a class="btn-book" href="https://wa.me/967782111532?text=استفسار%20عن%20رحلات%20نقل%20الركاب%20اليومية" target="_blank">استفسر عن الرحلات</a>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80" alt="سيارات حديثة">
-        </div>
-        <div class="card-content">
-          <div>
+    <!-- Full Width Feature Card -->
+    <div class="full-card">
+        <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?q=80&w=1000" alt="سيارة وسائق">
+        <div class="full-card-content">
             <h3>سيارات حديثة وسائقون محترفون 🛣️</h3>
-            <p>
-              راحتك في رحلتك تبدأ من أول خطوة!<br>
-              سفر مريح وأسعار تنافسية مصممة خصيصاً لراحتك.
-            </p>
-          </div>
-          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20طلب%20سيارة%20مع%20سائق%20محترف" target="_blank">طلب سيارة وسائق</a>
+            <p>راحتك في رحلتك تبدأ من أول خطوة! سفر مريح وأسعار تنافسية مصممة خصيصاً لراحتك.</p>
+            <a href="#" class="btn">طلب سيارة وسائق</a>
         </div>
-      </div>
-
-      <div class="service-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=800&q=80" alt="شجرة دم الأخوين سقطرى">
-        </div>
-        <div class="card-content">
-          <div>
-            <h3>نختار لك الأفضل (طيران، فنادق، تنقلات) 🏨</h3>
-            <p>
-              • مشاوير خاصة ونقل ركاب.<br>
-              • حجز تذاكر نقل بري وطيران.<br>
-              • تأجير سيارات وحجز فنادق وإرسال واستقبال الطرود.
-            </p>
-          </div>
-          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20استئجار%20سيارة%20أو%20حجز%20مشوار%20خاص" target="_blank">احجز مشوارك الخاص</a>
-        </div>
-      </div>
-
     </div>
 
-    <!-- قسم باقی خدمات التأشيرات والشحن -->
-    <h2 class="section-title">🌐 التأشيرات والحجوزات والشحن</h2>
-    <div class="services-grid">
-
-      <div class="service-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1590059200318-d2a99e57c4ed?auto=format&fit=crop&w=800&q=80" alt="تأشيرات سلطنة عمان">
-        </div>
-        <div class="card-content">
-          <div>
-            <h3>تأشيرات سلطنة عمان 🇴🇲</h3>
-            <p>
-              • زيارة 21 يوم | زيارة 3 أشهر متعددة | عبور 5 أيام<br>
-              <strong>المطلوب:</strong> صورة الجواز، صورة شخصية 4×6، اسم الأم، الغرض من الدخول، ضمانة عودة.
-            </p>
-          </div>
-          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20تأشيرات%20سلطنة%20عمان" target="_blank">طلب التأشيرة الآن</a>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80" alt="حجوزات الطيران">
-        </div>
-        <div class="card-content">
-          <div>
-            <h3>حجوزات الطيران ✈️</h3>
-            <p>
-              حجز تذاكر طيران لكافة الوجهات عبر مختلف الخطوط الجوية بأفضل الأسعار.<br>
-              <strong>المطلوب:</strong> تحديد خط السفر وتاريخ الرحلة.
-            </p>
-          </div>
-          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20حجز%20تذكرة%20طيران" target="_blank">احجز تذكرتك</a>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="الشحن الدولي">
-        </div>
-        <div class="card-content">
-          <div>
-            <h3>الشحن الدولي للبضائع والعسل 📦</h3>
-            <p>
-              شحن بري، جوي، وبحري لجميع البضائع والمنتجات اليمنية والعسل إلى كل دول العالم.<br>
-              <strong>المطلوب:</strong> اسم المرسل والمستلم، نوع الشحنة، والوزن.
-            </p>
-          </div>
-          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20خدمات%20الشحن%20الدولي" target="_blank">أرسل شحنتك</a>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80" alt="خدمات العمرة">
-        </div>
-        <div class="card-content">
-          <div>
-            <h3>تأشيرات وحجوزات العمرة 🕋</h3>
-            <p>
-              استخراج تأشيرات العمرة وتنظيم رحلات المعتمرين بكل سهولة.<br>
-              <strong>المطلوب:</strong> صورة الجواز، صورة إقامة المستضيف، وضمانة تجارية.
-            </p>
-          </div>
-          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20تأشيرات%20العمرة" target="_blank">احجز عمرتك</a>
-        </div>
-      </div>
-
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://t.me/" class="float-btn telegram-btn" target="_blank">✈️</a>
+        <a href="https://wa.me/" class="float-btn whatsapp-btn" target="_blank">💬</a>
     </div>
-
-  </div>
-
-  <!-- الأزرار العائمة -->
-  <div class="floating-buttons">
-    <a href="https://t.me/Offices_AlWalidi_bot" target="_blank" class="float-btn float-telegram" title="بوت التليجرام">
-      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.07-.78 4.18-1.82 6.97-3.02 8.37-3.61 3.99-1.66 4.82-1.95 5.36-1.96.12 0 .38.03.55.17.14.12.18.28.2.45-.02.07-.02.13-.03.22z"/></svg>
-    </a>
-
-    <a href="https://wa.me/967782111532" target="_blank" class="float-btn float-whatsapp" title="تواصل عبر الواتساب">
-      <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-    </a>
-  </div>
-
-  <footer>
-    <p>© 2026 مجموعة الوليدي للشحن والسفريات والنقل الدولي | جميع الحقوق محفوظة</p>
-    <p>للتواصل المباشر: 782111532</p>
-  </footer>
 
 </body>
 </html>
