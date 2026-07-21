@@ -20,23 +20,23 @@
     body {
       background-color: #0f172a;
       color: #f8fafc;
-      padding: 15px 10px 80px 10px;
+      padding: 20px 10px 80px 10px;
     }
 
     header {
       text-align: center;
-      padding: 15px 10px 25px;
+      padding: 20px 10px 30px;
     }
 
     header h1 {
       color: #38bdf8;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       margin-bottom: 8px;
     }
 
     header p {
       color: #94a3b8;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
     .alwalidi-container {
@@ -46,8 +46,8 @@
 
     .section-title {
       color: #38bdf8;
-      font-size: 1.3rem;
-      margin: 25px 0 15px;
+      font-size: 1.5rem;
+      margin: 35px 0 15px;
       padding-right: 10px;
       border-right: 4px solid #0284c7;
     }
@@ -55,11 +55,11 @@
     .hero-card {
       position: relative;
       width: 100%;
-      height: 220px;
-      border-radius: 16px;
+      height: 260px;
+      border-radius: 20px;
       overflow: hidden;
-      margin-bottom: 25px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
     .hero-card img {
@@ -74,23 +74,23 @@
       right: 0;
       left: 0;
       background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0));
-      padding: 20px 15px 12px;
+      padding: 25px 20px 15px;
     }
 
     .hero-overlay h2 {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       color: #ffffff;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
 
     .hero-overlay p {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: #cbd5e1;
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
 
@@ -102,48 +102,40 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(56, 189, 248, 0.15);
     }
 
-    /* ضبـط صور الكروت لعدم الخروج عن الإطار */
     .card-image {
       width: 100%;
-      height: 200px;
+      height: 220px;
       overflow: hidden;
       background-color: #0f172a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .card-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
-      max-width: 100%;
     }
 
     .card-content {
-      padding: 16px;
+      padding: 18px;
       flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     .card-content h3 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: #f1f5f9;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .card-content p {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: #94a3b8;
       line-height: 1.6;
       margin-bottom: 15px;
@@ -158,7 +150,8 @@
       padding: 10px;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
     }
 
     .btn-book:hover {
@@ -171,38 +164,48 @@
       left: 20px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       z-index: 9999;
     }
 
     .float-btn {
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
 
-    .float-whatsapp { background-color: #25d366; }
-    .float-telegram { background-color: #0088cc; }
+    .float-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .float-whatsapp {
+      background-color: #25d366;
+    }
+
+    .float-telegram {
+      background-color: #0088cc;
+    }
 
     .float-btn svg {
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
       fill: currentColor;
     }
 
     footer {
       text-align: center;
-      margin-top: 35px;
+      margin-top: 40px;
       padding: 20px;
       border-top: 1px solid #334155;
       color: #64748b;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
     }
 
     @media (max-width: 600px) {
@@ -210,7 +213,7 @@
         grid-template-columns: 1fr;
       }
       .hero-card {
-        height: 180px;
+        height: 200px;
       }
     }
   </style>
@@ -233,23 +236,21 @@
       </div>
     </div>
 
-    <!-- قسم خدمة السيارات والرحلات الخاصة -->
+    <!-- قسم خدمة السيارات والرحلات الخاصه -->
     <h2 class="section-title">🚗 قسم رحلات السيارات والنقل الخاص</h2>
     <div class="services-grid">
 
-      <!-- الكرت المحدث بالصورة المباشرة من GitHub -->
+      <!-- الصورة الخاصة بك (cars.jpg) -->
       <div class="service-card">
         <div class="card-image">
-          <img src="https://raw.githubusercontent.com/nnmnarmmmnar-sketch/alwalidi/main/cars.jpg" alt="مكاتب الوليدي - نقل ركاب">
+          <img src="cars.jpg" alt="مكاتب الوليدي - نقل ركاب بأحدث السيارات">
         </div>
         <div class="card-content">
-          <div>
-            <h3>نقل ركاب بأحدث السيارات والأسطول الحديث 🚍</h3>
-            <p>
-              رحلات يومية ومستمرة من اليمن إلى عمان، السعودية، والإمارات والعكس.<br>
-              حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.
-            </p>
-          </div>
+          <h3>نقل ركاب بأحدث السيارات والأسطول الحديث 🚍</h3>
+          <p>
+            رحلات يومية ومستمرة من اليمن إلى عمان، السعودية، والإمارات والعكس.<br>
+            حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.
+          </p>
           <a class="btn-book" href="https://wa.me/967782111532?text=استفسار%20عن%20رحلات%20نقل%20الركاب%20اليومية" target="_blank">استفسر عن الرحلات</a>
         </div>
       </div>
@@ -260,13 +261,11 @@
           <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="رحلات آمنة وممتعة">
         </div>
         <div class="card-content">
-          <div>
-            <h3>رحلات آمنة وممتعة (سيارات فورويل حديثة) 🚘</h3>
-            <p>
-              نقدم لكم رحلات آمنة وممتعة بأحدث سيارات الدفع الرباعي الفاخرة.<br>
-              <strong>نحقق رضاكم ونكسب ثقتكم دائماً.</strong>
-            </p>
-          </div>
+          <h3>رحلات آمنة وممتعة (سيارات فورويل حديثة) 🚘</h3>
+          <p>
+            نقدم لكم رحلات آمنة وممتعة بأحدث سيارات الدفع الرباعي الفاخرة.<br>
+            <strong>نحقق رضاكم ونكسب ثقتكم دائماً.</strong>
+          </p>
           <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20حجز%20رحلة%20عبر%20سيارة%20خاصة" target="_blank">احجز رحلتك الآن</a>
         </div>
       </div>
@@ -274,57 +273,53 @@
       <!-- سيارات حديثة وسائقون محترفون -->
       <div class="service-card">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80" alt="سيارات حديثة">
+          <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80" alt="تويوتا لاندكروزر وهايلكس 2025">
         </div>
         <div class="card-content">
-          <div>
-            <h3>سيارات حديثة وسائقون محترفون 🛣️</h3>
-            <p>
-              راحتك في رحلتك تبدأ من أول خطوة!<br>
-              سفر مريح وأسعار تنافسية مصممة خصيصاً لراحتك.
-            </p>
-          </div>
+          <h3>سيارات حديثة وسائقون محترفون 🛣️</h3>
+          <p>
+            راحتك في رحلتك تبدأ من أول خطوة!<br>
+            سفر مريح وأسعار تنافسية مصممة خصيصاً لراحتك.
+          </p>
           <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20طلب%20سيارة%20مع%20سائق%20محترف" target="_blank">طلب سيارة وسائق</a>
         </div>
       </div>
 
-      <!-- صورة شجرة دم الأخوين -->
+      <!-- صورة شجرة دم الأخوين سقطرى -->
       <div class="service-card">
         <div class="card-image">
           <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=800&q=80" alt="شجرة دم الأخوين سقطرى">
         </div>
         <div class="card-content">
-          <div>
-            <h3>نختار لك الأفضل (طيران، فنادق، تنقلات) 🏨</h3>
-            <p>
-              • مشاوير خاصة ونقل ركاب.<br>
-              • حجز تذاكر نقل بري وطيران.<br>
-              • تأجير سيارات وحجز فنادق وإرسال واستقبال الطرود.
-            </p>
-          </div>
+          <h3>نختار لك الأفضل (طيران، فنادق، تنقلات) 🏨</h3>
+          <p>
+            • مشاوير خاصة ونقل ركاب.<br>
+            • حجز تذاكر نقل بري وطيران.<br>
+            • تأجير سيارات وحجز فنادق وإرسال واستقبال الطرود.
+          </p>
           <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20استئجار%20سيارة%20أو%20حجز%20مشوار%20خاص" target="_blank">احجز مشوارك الخاص</a>
         </div>
       </div>
 
     </div>
 
-    <!-- قسم التأشيرات والحجوزات -->
+    <!-- قسم باقي خدمات التأشيرات والشحن -->
     <h2 class="section-title">🌐 التأشيرات والحجوزات والشحن</h2>
     <div class="services-grid">
 
-      <!-- تأشيرات عمان -->
+      <!-- صورة معالم سلطنة عمان -->
       <div class="service-card">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1590059200318-d2a99e57c4ed?auto=format&fit=crop&w=800&q=80" alt="تأشيرات سلطنة عمان">
+          <img src="https://images.unsplash.com/photo-1590059200318-d2a99e57c4ed?auto=format&fit=crop&w=800&q=80" alt="معالم سلطنة عمان - جامع السلطان قابوس">
         </div>
         <div class="card-content">
-          <div>
-            <h3>تأشيرات سلطنة عمان 🇴🇲</h3>
-            <p>
-              • زيارة 21 يوم | زيارة 3 أشهر متعددة | عبور 5 أيام<br>
-              <strong>المطلوب:</strong> صورة الجواز، صورة شخصية 4×6، اسم الأم، الغرض من الدخول، ضمانة عودة.
-            </p>
-          </div>
+          <h3>تأشيرات سلطنة عمان 🇴🇲</h3>
+          <p>
+            • زيارة 21 يوم<br>
+            • زيارة 3 أشهر متعددة<br>
+            • عبور 5 أيام<br>
+            <strong>المطلوب:</strong> صورة الجواز، صورة شخصية 4×6، اسم الأم، الغرض من الدخول، ضمانة عودة.
+          </p>
           <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20تأشيرات%20سلطنة%20عمان" target="_blank">طلب التأشيرة الآن</a>
         </div>
       </div>
@@ -335,13 +330,11 @@
           <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80" alt="حجوزات الطيران">
         </div>
         <div class="card-content">
-          <div>
-            <h3>حجوزات الطيران ✈️</h3>
-            <p>
-              حجز تذاكر طيران لكافة الوجهات عبر مختلف الخطوط الجوية بأفضل الأسعار.<br>
-              <strong>المطلوب:</strong> تحديد خط السفر وتاريخ الرحلة.
-            </p>
-          </div>
+          <h3>حجوزات الطيران ✈️</h3>
+          <p>
+            حجز تذاكر طيران لكافة الوجهات عبر مختلف الخطوط الجوية بأفضل الأسعار.<br>
+            <strong>المطلوب:</strong> تحديد خط السفر وتاريخ الرحلة (مثال: من عدن إلى القاهرة).
+          </p>
           <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20حجز%20تذكرة%20طيران" target="_blank">احجز تذكرتك</a>
         </div>
       </div>
@@ -352,13 +345,11 @@
           <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="الشحن الدولي">
         </div>
         <div class="card-content">
-          <div>
-            <h3>الشحن الدولي للبضائع والعسل 📦</h3>
-            <p>
-              شحن بري، جوي، وبحري لجميع البضائع والمنتجات اليمنية والعسل إلى كل دول العالم.<br>
-              <strong>المطلوب:</strong> اسم المرسل والمستلم، نوع الشحنة، والوزن.
-            </p>
-          </div>
+          <h3>الشحن الدولي للبضائع والعسل 📦</h3>
+          <p>
+            شحن بري، جوي، وبحري لجميع البضائع والمنتجات اليمنية والعسل من وإلى كل دول العالم.<br>
+            <strong>المطلوب:</strong> اسم المرسل والمستلم، نوع الشحنة، الوزن، وصورة الشحنة.
+          </p>
           <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20خدمات%20الشحن%20الدولي" target="_blank">أرسل شحنتك</a>
         </div>
       </div>
@@ -369,13 +360,11 @@
           <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80" alt="خدمات العمرة">
         </div>
         <div class="card-content">
-          <div>
-            <h3>تأشيرات وحجوزات العمرة 🕋</h3>
-            <p>
-              استخراج تأشيرات العمرة وتنظيم رحلات المعتمرين بكل سهولة.<br>
-              <strong>المطلوب:</strong> صورة الجواز، صورة إقامة المستضيف، وضمانة تجارية.
-            </p>
-          </div>
+          <h3>تأشيرات وحجوزات العمرة 🕋</h3>
+          <p>
+            استخراج تأشيرات العمرة وتنظيم رحلات المعتمرين بكل سهولة.<br>
+            <strong>المطلوب:</strong> صورة الجواز، صورة إقامة المستضيف، وضمانة تجارية للعودة.
+          </p>
           <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20تأشيرات%20العمرة" target="_blank">احجز عمرتك</a>
         </div>
       </div>
@@ -397,7 +386,7 @@
 
   <footer>
     <p>© 2026 مجموعة الوليدي للشحن والسفريات والنقل الدولي | جميع الحقوق محفوظة</p>
-    <p>للتواصل المباشر: 782111532</p>
+    <p>ل للتواصل المباشر: 782111532</p>
   </footer>
 
 </body>
