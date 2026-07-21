@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مجموعة الوليدي</title>
+  <title>مجموعة الوليدي للشحن والسفريات والنقل الدولي</title>
+  
+  <!-- خط تجوال الحديث -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -14,186 +17,317 @@
       padding: 0;
       font-family: 'Tajawal', sans-serif;
     }
+
     body {
-      background-color: #f8fafc;
-      color: #1e293b;
+      background-color: #0f172a;
+      color: #f8fafc;
       padding: 20px 10px;
     }
+
+    /* الشريط العلوى للرأس */
+    header {
+      text-align: center;
+      padding: 20px 10px 30px;
+    }
+
+    header h1 {
+      color: #38bdf8;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
     .alwalidi-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 15px;
-      direction: rtl;
     }
+
+    /* البنر الرئيسي */
     .hero-card {
       position: relative;
       width: 100%;
-      height: 280px;
+      height: 260px;
       border-radius: 20px;
       overflow: hidden;
-      margin-bottom: 25px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
+
     .hero-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s ease;
     }
-    .hero-card:hover img {
-      transform: scale(1.05);
-    }
+
     .hero-overlay {
       position: absolute;
       bottom: 0;
       right: 0;
       left: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
-      color: #ffffff;
-      padding: 25px 20px 20px;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0));
+      padding: 25px 20px 15px;
     }
+
     .hero-overlay h2 {
-      margin: 0 0 8px 0;
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 5px;
     }
+
     .hero-overlay p {
-      margin: 0;
-      font-size: 0.95rem;
-      opacity: 0.9;
+      font-size: 0.9rem;
+      color: #cbd5e1;
     }
+
+    /* شبكة الخدمات */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
+
+    /* تصميم البطاقة */
     .service-card {
-      background: #ffffff;
+      background-color: #1e293b;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
-      border: 1px solid #edf2f7;
-      cursor: pointer;
+      border: 1px solid #334155;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(56, 189, 248, 0.15);
     }
+
     .card-image {
       width: 100%;
-      height: 200px;
+      height: 180px;
       overflow: hidden;
     }
+
     .card-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
     }
-    .service-card:hover .card-image img {
-      transform: scale(1.08);
-    }
+
     .card-content {
       padding: 18px;
-      text-align: right;
+      flex-grow: 1;
     }
+
     .card-content h3 {
-      margin: 0 0 8px 0;
-      font-size: 1.15rem;
-      color: #1a202c;
-      font-weight: 700;
+      font-size: 1.2rem;
+      color: #f1f5f9;
+      margin-bottom: 10px;
     }
+
     .card-content p {
-      margin: 0;
       font-size: 0.88rem;
-      color: #4a5568;
-      line-height: 1.5;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 15px;
     }
+
+    /* زر الحجز عبر واتساب */
+    .btn-book {
+      display: block;
+      text-align: center;
+      background-color: #0284c7;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-book:hover {
+      background-color: #0369a1;
+    }
+
+    /* تذييل الصفحة */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      border-top: 1px solid #334155;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
     @media (max-width: 600px) {
-      .hero-card {
-        height: 200px;
-      }
-      .hero-overlay h2 {
-        font-size: 1.2rem;
-      }
-      .hero-overlay p {
-        font-size: 0.8rem;
-      }
       .services-grid {
         grid-template-columns: 1fr;
       }
-      .card-image {
-        height: 180px;
+      .hero-card {
+        height: 200px;
       }
     }
   </style>
 </head>
 <body>
-  <section class="alwalidi-container">
+
+  <!-- رأس الموقع -->
+  <header>
+    <h1>مجموعة الوليدي للنقل الدولي والشحن والسفريات</h1>
+    <p>خدمات التأشيرات، رحلات النقل البري، حجز الطيران، وشحن البضائع</p>
+  </header>
+
+  <div class="alwalidi-container">
+
+    <!-- البنر الرئيسي -->
     <div class="hero-card">
-      <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=1200&q=80" alt="الوليدي">
+      <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=1200&q=80" alt="الوليدي للسفريات">
       <div class="hero-overlay">
-        <h2>مجموعة الوليدي للشحن والسفريات والنقل الدولي</h2>
-        <p>خدمات التأشيرات، رحلات النقل البري، حجز الطيران، وشحن البضائع</p>
+        <h2>كل وجهة أقرب | خدمات سفر وشحن متكاملة</h2>
+        <p>نُسهل لك إجراءات المعاملات بأعلى سرعة وأقل تكلفة</p>
       </div>
     </div>
+
+    <!-- شبكة الخدمات -->
     <div class="services-grid">
+
+      <!-- 1. تأشيرات عمان -->
       <div class="service-card">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80" alt="عمان">
+          <img src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=800&q=80" alt="تأشيرات عمان">
         </div>
         <div class="card-content">
           <h3>تأشيرات سلطنة عمان 🇴🇲</h3>
-          <p>عبور 5 أيام - زيارة 21 يوم - زيارة 3 أشهر متعددة</p>
+          <p>
+            • زيارة 21 يوم<br>
+            • زيارة 3 أشهر متعددة<br>
+            • عبور 5 أيام<br>
+            <strong>المطلوب:</strong> صورة الجواز، صورة شخصية 4×6، اسم الأم، الغرض من الدخول، ضمانة عودة.
+          </p>
+          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20تأشيرات%20سلطنة%20عمان" target="_blank">طلب التأشيرة الآن</a>
         </div>
       </div>
+
+      <!-- 2. حجوزات الطيران -->
       <div class="service-card">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80" alt="طيران">
+          <img src="https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80" alt="حجوزات الطيران">
         </div>
         <div class="card-content">
           <h3>حجوزات الطيران ✈️</h3>
-          <p>تذاكر طيران على كافة الخطوط الجوية بأفضل الأسعار</p>
+          <p>
+            حجز تذاكر طيران لكافة الوجهات عبر مختلف الخطوط الجوية بأفضل الأسعار.<br>
+            <strong>المطلوب:</strong> تحديد خط السفر وتاريخ الرحلة (مثال: من عدن إلى القاهرة).
+          </p>
+          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20حجز%20تذكرة%20طيران" target="_blank">احجز تذكرتك</a>
         </div>
       </div>
+
+      <!-- 3. النقل البري إلى عمان -->
       <div class="service-card">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80" alt="عمرة">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="النقل البري عمان">
         </div>
         <div class="card-content">
-          <h3>تأشيرات وحجوزات العمرة 🕋</h3>
-          <p>تسهيلات استخراج تأشيرات العمرة وتنظيم الرحلات</p>
+          <h3>النقل البري - سلطنة عمان 🚌</h3>
+          <p>
+            رحلات برية يومية من جميع المحافظات اليمنية إلى صلالة ومسقط وكافة مدن السلطنة.<br>
+            <strong>المطلوب:</strong> مكان الانطلاق، جهة الوصول، وعدد المسافرين.
+          </p>
+          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20حجز%20نقل%20بري%20إلى%20سلطنة%20عمان" target="_blank">احجز رحلتك</a>
         </div>
       </div>
+
+      <!-- 4. النقل البري إلى الإمارات -->
       <div class="service-card">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80" alt="نقل">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="النقل البري الإمارات">
         </div>
         <div class="card-content">
-          <h3>النقل البري الدولي 🚌</h3>
-          <p>حجز باصات يومية إلى السعودية، الإمارات، وسلطنة عمان</p>
+          <h3>النقل البري - الإمارات 🇦🇪</h3>
+          <p>
+            رحلات إلى دبي، أبوظبي، عجمان، وكافة مدن الإمارات من مختلف المحافظات.<br>
+            <strong>المطلوب:</strong> نقطة الانطلاق ونقطة الوصول.
+          </p>
+          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20حجز%20نقل%20بري%20إلى%20الإمارات" target="_blank">احجز رحلتك</a>
         </div>
       </div>
+
+      <!-- 5. النقل البري إلى السعودية -->
       <div class="service-card">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="شحن">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="النقل البري السعودية">
+        </div>
+        <div class="card-content">
+          <h3>النقل البري - السعودية 🇸🇦</h3>
+          <p>
+            رحلات يومية إلى جدة، الرياض، الدمام، الطائف، جيزان، نجران، مكة، والمدينة.<br>
+            <strong>المطلوب:</strong> نقطة الانطلاق، الوصول، وعدد المسافرين.
+          </p>
+          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20حجز%20نقل%20بري%20إلى%20السعودية" target="_blank">احجز رحلتك</a>
+        </div>
+      </div>
+
+      <!-- 6. الشحن الدولي -->
+      <div class="service-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="الشحن الدولي">
         </div>
         <div class="card-content">
           <h3>الشحن الدولي للبضائع والعسل 📦</h3>
-          <p>خدمات شحن بري وجوي آمن للطرود والبضائع لمختلف الدول</p>
+          <p>
+            شحن بري، جوي، وبحري لجميع البضائع والمنتجات اليمنية والعسل من وإلى كل دول العالم.<br>
+            <strong>المطلوب:</strong> اسم المرسل والمستلم، نوع الشحنة، الوزن، وصورة الشحنة.
+          </p>
+          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20خدمات%20الشحن%20الدولي" target="_blank">أرسل شحنتك</a>
         </div>
       </div>
+
+      <!-- 7. خدمات الصين -->
       <div class="service-card">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80" alt="صين">
+          <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80" alt="خدمات الصين">
         </div>
         <div class="card-content">
           <h3>خدمات جمهورية الصين 🇨🇳</h3>
-          <p>تأشيرات تجارية، دعوات رسمية، ومتابعة فتح الشركات</p>
+          <p>
+            • تأشيرات أعمال تجارية ودعوات معارض وزيارات طلابية.<br>
+            • دعوات تجارية رسمية للشركات والأفراد.<br>
+            • فتح وتسجيل الشركات والمكاتب التجارية قانونياً.
+          </p>
+          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20خدمات%20الصين" target="_blank">تواصل معنا</a>
         </div>
       </div>
+
+      <!-- 8. خدمات العمرة -->
+      <div class="service-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=800&q=80" alt="خدمات العمرة">
+        </div>
+        <div class="card-content">
+          <h3>تأشيرات وحجوزات العمرة 🕋</h3>
+          <p>
+            استخراج تأشيرات العمرة وتنظيم رحلات المعتمرين بكل سهولة.<br>
+            <strong>المطلوب:</strong> صورة الجواز، صورة إقامة المستضيف، وضمانة تجارية للعودة.
+          </p>
+          <a class="btn-book" href="https://wa.me/967782111532?text=أريد%20الاستفسار%20عن%20تأشيرات%20العمرة" target="_blank">احجز عمرتك</a>
+        </div>
+      </div>
+
     </div>
-  </section>
+
+  </div>
+
+  <footer>
+    <p>© 2026 مجموعة الوليدي للشحن والسفريات والنقل الدولي | جميع الحقوق محفوظة</p>
+    <p>للتواصل المباشر: 782111532</p>
+  </footer>
+
 </body>
 </html>
