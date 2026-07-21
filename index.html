@@ -1,561 +1,248 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مجموعة الوليدي للنقل والشحن الدولي والسفريات</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap');
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مجموعة الوليدي للنقل الدولي والشحن والسفريات</title>
+  
+  <!-- خط تجوال من Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-        body {
-            background-color: #0f172a;
-            color: #334155;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 10px;
-        }
+  <style>
+    /* Reset Standard Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 480px;
-            background-color: #f8fafc;
-            min-height: 900px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+      padding: 20px 10px;
+    }
 
-        .header {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            color: #ffffff;
-            text-align: center;
-            padding: 30px 20px 25px 20px;
-            border-bottom: 4px solid #3b82f6;
-        }
+    /* Main Container */
+    .alwalidi-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .header-icon {
-            font-size: 2.8rem;
-            margin-bottom: 8px;
-        }
+    /* Banner Hero Section */
+    .hero-card {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
 
-        .header h1 {
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: #f8fafc;
-            margin-bottom: 6px;
-            line-height: 1.3;
-        }
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
 
-        .header p {
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
+    .hero-card:hover img {
+      transform: scale(1.05); /* تكبير بنعومة للغلاف */
+    }
 
-        .info-bar {
-            background-color: #2563eb;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
+    .hero-overlay {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0));
+      color: #ffffff;
+      padding: 30px 25px 20px;
+    }
 
-        .content {
-            padding: 16px;
-            flex: 1;
-            padding-bottom: 90px;
-        }
+    .hero-overlay h2 {
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
 
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin: 22px 0 12px 0;
-            font-size: 1.05rem;
-            font-weight: 800;
-            color: #1e293b;
-            border-right: 4px solid #2563eb;
-            padding-right: 10px;
-        }
+    .hero-overlay p {
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
 
-        .card {
-            background-color: #ffffff;
-            border-radius: 14px;
-            padding: 16px;
-            margin-bottom: 14px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
+    /* Services Responsive Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 25px;
+    }
 
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
+    /* Individual Card Design */
+    .service-card {
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+      border: 1px solid #e2e8f0;
+      cursor: pointer;
+    }
 
-        .card-icon {
-            font-size: 1.5rem;
-        }
+    /* Hover Scaling & Elevation Effect */
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+    }
 
-        .card-title {
-            font-size: 0.98rem;
-            font-weight: 700;
-            color: #0f172a;
-        }
+    .card-image {
+      width: 100%;
+      height: 210px;
+      overflow: hidden;
+    }
 
-        .card-desc {
-            font-size: 0.85rem;
-            color: #475569;
-            line-height: 1.5;
-            margin-bottom: 12px;
-            white-space: pre-line;
-        }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
 
-        .card-requirements {
-            background-color: #f1f5f9;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            color: #334155;
-            margin-bottom: 12px;
-        }
+    /* Smooth Image Zooming */
+    .service-card:hover .card-image img {
+      transform: scale(1.08);
+    }
 
-        .card-requirements ul {
-            list-style: none;
-            padding-right: 0;
-            margin-top: 4px;
-        }
+    /* Card Text Body */
+    .card-content {
+      padding: 20px;
+      text-align: right;
+    }
 
-        .card-requirements li {
-            position: relative;
-            padding-right: 14px;
-            margin-bottom: 3px;
-        }
+    .card-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+      color: #0f172a;
+      font-weight: 700;
+    }
 
-        .card-requirements li::before {
-            content: "•";
-            position: absolute;
-            right: 0;
-            color: #2563eb;
-            font-weight: bold;
-        }
+    .card-content p {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.6;
+    }
 
-        .btn-order {
-            width: 100%;
-            background-color: #1e293b;
-            color: #ffffff;
-            border: none;
-            padding: 10px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.88rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
+    /* Responsive Adjustments for Mobile Screens */
+    @media (max-width: 600px) {
+      .hero-card {
+        height: 220px;
+      }
+      
+      .hero-overlay h2 {
+        font-size: 1.3rem;
+      }
+      
+      .hero-overlay p {
+        font-size: 0.85rem;
+      }
 
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            width: 55px;
-            height: 55px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 10px 20px rgba(37,211,102,0.4);
-            text-decoration: none;
-            z-index: 100;
-        }
+      .services-grid {
+        grid-template-columns: 1fr; /* عرض بطاقة واحدة بالكامل في الهاتف */
+      }
 
-        /* Modal Popup */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(15,23,42,0.75);
-            z-index: 200;
-            justify-content: center;
-            align-items: flex-end;
-        }
-
-        .modal-body {
-            background-color: #ffffff;
-            width: 100%;
-            max-width: 480px;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            padding: 22px;
-            max-height: 85vh;
-            overflow-y: auto;
-        }
-
-        .modal-title {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: #0f172a;
-            margin-bottom: 14px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .form-group {
-            margin-bottom: 12px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: #334155;
-            margin-bottom: 4px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 0.88rem;
-            outline: none;
-        }
-
-        .form-control:focus {
-            border-color: #2563eb;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background-color: #25D366;
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            margin-top: 8px;
-        }
-
-        .btn-close {
-            width: 100%;
-            background-color: #f1f5f9;
-            color: #64748b;
-            border: none;
-            padding: 10px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 0.88rem;
-            cursor: pointer;
-            margin-top: 6px;
-        }
-    </style>
+      .card-image {
+        height: 190px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- الهيدر -->
-        <div class="header">
-            <a href="https://t.me/Offices_AlWalidi_bot" target="_blank" style="text-decoration: none; display: block;">
-    <img src="china.jpg.jpg" alt="مجموعة الوليدي" style="width: 100%; max-width: 350px; border-radius: 12px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
-</a>
-
-
-            <h1>مجموعة الوليدي للنقل والشحن الدولي والسفريات</h1>
-            <p>تأشيرات | حجوزات طيران | عمرة | نقل بري | شحن دولي</p>
-        </div>
-
-        <div class="info-bar">
-            📞 التواصل والواتساب: 782111532
-        </div>
-
-        <div class="content">
-
-            <!-- 1. تأشيرات سلطنة عمان -->
-            <div class="section-header">🇴🇲 تأشيرات سلطنة عمان</div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">📄</span>
-                    <div class="card-title">تأشيرة زيارة عمان (21 يوم)</div>
-                </div>
-                <div class="card-desc">تأشيرة زيارة عمان لمدة 21 يوم متاحة. الرجاء تزويدنا بالبيانات المطلوبة.</div>
-                <div class="card-requirements">
-                    <b>المتطلبات:</b>
-                    <ul>
-                        <li>صورة الجواز</li>
-                        <li>صورة شخصية 4×6</li>
-                        <li>اسم الأم</li>
-                        <li>الغرض من الدخول</li>
-                        <li>ضمانة عودة</li>
-                    </ul>
-                </div>
-                <button class="btn-order" onclick="openModal('تأشيرة زيارة عمان 21 يوم', ['اسم المسافر الرباعي', 'اسم الأم', 'الغرض من الدخول', 'ملاحظات أخرى'])">طلب الخدمة الآن</button>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">📄</span>
-                    <div class="card-title">تأشيرة زيارة عمان (3 أشهر)</div>
-                </div>
-                <div class="card-desc">تأشيرة زيارة عمان لمدة 3 أشهر متاحة. الرجاء تزويدنا بالبيانات المطلوبة.</div>
-                <div class="card-requirements">
-                    <b>المتطلبات:</b>
-                    <ul>
-                        <li>صورة الجواز</li>
-                        <li>صورة شخصية 4×6</li>
-                        <li>اسم الأم</li>
-                        <li>الغرض من الدخول</li>
-                        <li>ضمانة عودة</li>
-                    </ul>
-                </div>
-                <button class="btn-order" onclick="openModal('تأشيرة زيارة عمان 3 أشهر', ['اسم المسافر الرباعي', 'اسم الأم', 'الغرض من الدخول', 'ملاحظات أخرى'])">طلب الخدمة الآن</button>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">✈️</span>
-                    <div class="card-title">تأشيرة عبور عمان (5 أيام)</div>
-                </div>
-                <div class="card-desc">تأشيرة عبور عمان متاحة حسب مدة الرحلة. الرجاء تزويدنا ببيانات الرحلة.</div>
-                <div class="card-requirements">
-                    <b>المتطلبات:</b>
-                    <ul>
-                        <li>تذكرة الطيران إلى الدولة المراد السفر إليها</li>
-                        <li>صورة الجواز</li>
-                        <li>صورة شخصية 4×6</li>
-                        <li>اسم الأم</li>
-                        <li>الغرض من الدخول وضمانة عودة</li>
-                    </ul>
-                </div>
-                <button class="btn-order" onclick="openModal('تأشيرة عبور عمان 5 أيام', ['اسم المسافر الرباعي', 'اسم الأم', 'جهة السفر النهائية', 'تاريخ الرحلة'])">طلب الخدمة الآن</button>
-            </div>
-
-            <!-- 2. خدمة العمرة -->
-            <div class="section-header">🕋 تأشيرات العمرة</div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">🕋</span>
-                    <div class="card-title">تأشيرة العمرة</div>
-                </div>
-                <div class="card-desc">نقدم خدمة استخراج تأشيرات العمرة لجميع المسافرين. الرجاء تزويدنا بالبيانات المطلوبة للحجز.</div>
-                <div class="card-requirements">
-                    <b>المتطلبات:</b>
-                    <ul>
-                        <li>صورة الجواز</li>
-                        <li>صورة إقامة المستضيف</li>
-                        <li>ضمانة عودة (ضمانة تجارية)</li>
-                    </ul>
-                </div>
-                <button class="btn-order" onclick="openModal('تأشيرة العمرة', ['اسم المعتمر الرباعي', 'اسم المستضيف ورقم إقامته', 'بيانات الضمانة التجارية'])">طلب تأشيرة العمرة</button>
-            </div>
-
-            <!-- 3. تأشيرات وخدمات الصين -->
-            <div class="section-header">🇨🇳 خدمات جمهورية الصين</div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">💼</span>
-                    <div class="card-title">تأشيرات الصين (فيزا)</div>
-                </div>
-                <div class="card-desc">نقدم استخراج تأشيرات الصين بأنواعها: أعمال تجارية - دعوات معارض الصين - طلاب.</div>
-                <button class="btn-order" onclick="openModal('تأشيرة الصين', ['الاسم الكامل', 'نوع التأشيرة (أعمال / دعوات معارض / طلاب)', 'ملاحظات'])">طلب التأشيرة</button>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">✉️</span>
-                    <div class="card-title">الدعوات التجارية للصين</div>
-                </div>
-                <div class="card-desc">خدمة الدعوات التجارية للصين متاحة للشركات والأفراد. الرجاء تزويدنا بالبيانات الرسمية.</div>
-                <button class="btn-order" onclick="openModal('دعوة تجارية للصين', ['اسم الفرد / الشركة', 'مجال النشاط التجاري', 'رقم التواصل'])">طلب الدعوة التجارية</button>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">🏢</span>
-                    <div class="card-title">فتح مكاتب وشركات في الصين</div>
-                </div>
-                <div class="card-desc">خدمة فتح مكاتب وشركات تجارية في الصين متاحة، يشمل التسجيل القانوني والدعم الإداري.</div>
-                <button class="btn-order" onclick="openModal('فتح شركة في الصين', ['اسم المستثمر / الشركة', 'نوع النشاط المطلوب', 'رقم التواصل'])">طلب الخدمة</button>
-            </div>
-
-            <!-- 4. حجوزات الطيران -->
-            <div class="section-header">✈️ حجوزات الطيران</div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">🎫</span>
-                    <div class="card-title">حجز تذاكر طيران</div>
-                </div>
-                <div class="card-desc">يمكننا مساعدتك في حجز تذاكر الطيران لأي وجهة. الرجاء تزويدنا بوجهة الرحلة وتاريخ السفر.<br><b>مثال:</b> من مطار عدن إلى مطار القاهرة (تاريخ 2026/1/1)</div>
-                <button class="btn-order" onclick="openModal('حجز تذكرة طيران', ['مطار الانطلاق', 'مطار الوصول', 'تاريخ السفر', 'عدد المسافرين'])">احجز تذكرتك الآن</button>
-            </div>
-
-            <!-- 5. النقل البري الدولي -->
-            <div class="section-header">🚌 النقل البري الدولي</div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">🇴🇲</span>
-                    <div class="card-title">نقل بري - سلطنة عمان</div>
-                </div>
-                <div class="card-desc">نوفر خدمة حجز النقل البري من جميع محافظات اليمن إلى صلالة، مسقط وإلى جميع مدن السلطنة.<br><b>مثال:</b> من صنعاء إلى مسقط</div>
-                <button class="card-btn btn-order" onclick="openModal('نقل بري إلى عمان', ['مكان الانطلاق (المحافظة)', 'مكان الوصول (المدينة)', 'عدد المسافرين', 'تاريخ السفر'])">حجز رحلة</button>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">🇦🇪</span>
-                    <div class="card-title">نقل بري - الإمارات العربية المتحدة</div>
-                </div>
-                <div class="card-desc">نوفر خدمة حجز النقل البري من جميع محافظات اليمن إلى الإمارات (دبي، أبوظبي، عجمان وإلى جميع مدن الإمارات).<br><b>مثال:</b> من المكلا إلى دبي</div>
-                <button class="btn-order" onclick="openModal('نقل بري إلى الإمارات', ['مكان الانطلاق', 'مكان الوصول', 'عدد المسافرين', 'تاريخ السفر'])">حجز رحلة</button>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">🇸🇦</span>
-                    <div class="card-title">نقل بري - المملكة العربية السعودية</div>
-                </div>
-                <div class="card-desc">نوفر خدمة حجز النقل البري من جميع محافظات اليمن إلى جميع مدن المملكة (جدة، الرياض، الدمام، الطائف، جيزان، نجران، مكة، المدينة المنورة).<br><b>مثال:</b> صنعاء - جدة</div>
-                <button class="btn-order" onclick="openModal('نقل بري إلى السعودية', ['مكان الانطلاق', 'مكان الوصول', 'عدد المسافرين', 'تاريخ السفر'])">حجز رحلة</button>
-            </div>
-
-            <!-- 6. خدمات الشحن الدولي -->
-            <div class="section-header">🚚 الشحن الدولي البضائع والعسل</div>
-
-            <div class="card">
-                <div class="card-header">
-                    <span class="card-icon">📦</span>
-                    <div class="card-title">شحن بري / جوي / بحري</div>
-                </div>
-                <div class="card-desc">شحن جميع البضائع والمنتجات اليمنية والعسل من وإلى جميع أنحاء العالم 🌏 بسرعة وسهولة وأسعار خاصة بالكميات الكبيرة.</div>
-                <button class="btn-order" onclick="openModal('طلب شحن بضائع', ['اسم المرسل', 'اسم المستلم', 'وصف الشحنة ونوعها', 'الوزن التقريبي (كجم)', 'جهة الإرسال (من)', 'جهة الاستلام (إلى)'])">طلب شحنة جديدة</button>
-            </div>
-
-        </div>
-
-        <!-- زر الواتساب العائم -->
-        <a href="https://wa.me/967782111532" class="floating-whatsapp" target="_blank" title="تواصل معنا عبر الواتساب">💬</a>
-
-        <!-- النافذة المنبثقة لإدخال البيانات -->
-        <div class="modal-overlay" id="customModal">
-            <div class="modal-body">
-                <div class="modal-title" id="modalServiceTitle">عنوان الخدمة</div>
-                <div id="modalInputs"></div>
-                <button class="btn-submit" onclick="submitToWhatsApp()">إرسال الطلب عبر الواتساب 📲</button>
-                <button class="btn-close" onclick="closeModal()">إلغاء</button>
-            </div>
-        </div>
+  <section class="alwalidi-container">
+    
+    <!-- البنر الرئيسي Top Hero Card -->
+    <div class="hero-card">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80" alt="مجموعة الوليدي للشحن والسفريات">
+      <div class="hero-overlay">
+        <h2>مجموعة الوليدي للنقل الدولي والشحن والسفريات</h2>
+        <p>خدمات التأشيرات، رحلات النقل البري، حجز الطيران، وشحن البضائع والطرود</p>
+      </div>
     </div>
 
-    <script>
-        let selectedService = '';
+    <!-- شبكة البطاقات Grid -->
+    <div class="services-grid">
 
-        function openModal(serviceTitle, fields) {
-            selectedService = serviceTitle;
-            document.getElementById('modalServiceTitle').innerText = serviceTitle;
-            
-            const inputsContainer = document.getElementById('modalInputs');
-            inputsContainer.innerHTML = '';
+      <!-- تأشيرات عمان -->
+      <div class="service-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?auto=format&fit=crop&w=800&q=80" alt="تأشيرات سلطنة عمان">
+        </div>
+        <div class="card-content">
+          <h3>تأشيرات سلطنة عمان 🇴🇲</h3>
+          <p>عبور 5 أيام - زيارة 21 يوم - زيارة 3 أشهر متعددة الدخول</p>
+        </div>
+      </div>
 
-            fields.forEach((fieldLabel, idx) => {
-                const group = document.createElement('div');
-                group.className = 'form-group';
-                group.innerHTML = `
-                    <label>${fieldLabel}:</label>
-                    <input type="text" id="input_field_${idx}" class="form-control" placeholder="أدخل ${fieldLabel}">
-                `;
-                inputsContainer.appendChild(group);
-            });
+      <!-- حجوزات الطيران -->
+      <div class="service-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" alt="حجوزات الطيران">
+        </div>
+        <div class="card-content">
+          <h3>حجوزات الطيران ✈️</h3>
+          <p>تذاكر طيران على كافة الخطوط الجوية المحلية والدولية بأفضل الأسعار</p>
+        </div>
+      </div>
 
-            document.getElementById('customModal').style.display = 'flex';
-        }
+      <!-- خدمات العمرة -->
+      <div class="service-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=800&q=80" alt="تأشيرات العمرة">
+        </div>
+        <div class="card-content">
+          <h3>تأشيرات وحجوزات العمرة 🕋</h3>
+          <p>تسهيلات كاملة لاستخراج تأشيرات العمرة وتنظيم رحلات المعتمرين</p>
+        </div>
+      </div>
 
-        function closeModal() {
-            document.getElementById('customModal').style.display = 'none';
-        }
+      <!-- النقل البري -->
+      <div class="service-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="النقل البري الدولي">
+        </div>
+        <div class="card-content">
+          <h3>النقل البري الدولي 🚌</h3>
+          <p>حجز باصات يومية حديثة إلى السعودية، الإمارات، وسلطنة عمان</p>
+        </div>
+      </div>
 
-        function submitToWhatsApp() {
-            const inputs = document.querySelectorAll('#modalInputs input');
-            let formDetails = '';
-            let isComplete = true;
+      <!-- الشحن الدولي -->
+      <div class="service-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="الشحن الدولي">
+        </div>
+        <div class="card-content">
+          <h3>الشحن الدولي للبضائع والعسل 📦</h3>
+          <p>خدمات شحن بري وجوي آمن وسريع للطرود والبضائع والعسل بمختلف الدول</p>
+        </div>
+      </div>
 
-            inputs.forEach(input => {
-                const label = input.previousElementSibling.innerText.replace(':', '');
-                const val = input.value.trim();
-                if(!val) isComplete = false;
-                formDetails += `• *${label}:* ${val}\n`;
-            });
+      <!-- خدمات الصين -->
+      <div class="service-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=800&q=80" alt="خدمات الصين">
+        </div>
+        <div class="card-content">
+          <h3>خدمات جمهورية الصين 🇨🇳</h3>
+          <p>تأشيرات تجارية، دعوات رسمية، ومتابعة إجراءات فتح الشركات والتجار</p>
+        </div>
+      </div>
 
-            if(!isComplete) {
-                alert('يرجى تعبئة جميع البيانات المطلوبة لخدمتك بشكل صحيح.');
-                return;
-            }
-
-            const phone = "967782111532";
-            const message = `السلام عليكم ورحمة الله وبركاته\n\n*طلب جديد عبر الموقع الإلكتروني:* 🌐\n\n*الخدمة المطلوبة:* ${selectedService}\n\n*البيانات والاطلاع:* \n${formDetails}\nشاكرين لكم حسن التعاون، مجموعة الوليدي للنقل والشحن الدولي.`;
-
-            const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-            closeModal();
-        }
-    </script>
-    <!-- أيقونة التليجرام العائمة في أسفل الشاشة -->
-<a href="https://t.me/Offices_AlWalidi_bot" target="_blank" class="telegram-float">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" fill="#ffffff"/>
-    </svg>
-</a>
-
-<style>
-.telegram-float {
-    position: fixed;
-    bottom: 85px; /* تضع الأيقونة فوق زر الواتساب/الدردشة الأخضر مباشرة */
-    left: 20px;
-    background-color: #24A1DE; /* لون التليجرام الرسمي */
-    color: white;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
-    transition: transform 0.2s ease-in-out;
-}
-
-.telegram-float:hover {
-    transform: scale(1.1);
-}
-</style>
+    </div>
+  </section>
 
 </body>
 </html>
- 
