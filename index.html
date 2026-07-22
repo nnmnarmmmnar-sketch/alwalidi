@@ -77,7 +77,7 @@
             color: #d1d5db;
         }
 
-        /* Titles & Announcements */
+        /* Announcements & Titles */
         .announcement-bar {
             background-color: rgba(30, 144, 255, 0.12);
             color: #1e90ff;
@@ -195,6 +195,58 @@
             background-color: var(--accent-hover);
         }
 
+        /* Selection Options Grid Buttons */
+        .sub-options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .option-btn {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+            padding: 12px 8px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .option-btn:hover {
+            background-color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        /* Countries Grid (2 Columns) */
+        .countries-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            max-height: 350px;
+            overflow-y: auto;
+            padding-left: 5px;
+        }
+
+        .country-btn {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 10px 5px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .country-btn:hover {
+            background-color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
         /* Branches Section */
         .branches-container {
             display: flex;
@@ -277,6 +329,15 @@
         .modal-header h3 {
             color: #1e90ff;
             font-size: 1rem;
+        }
+
+        .back-link {
+            color: #1e90ff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: none;
         }
 
         .close-btn {
@@ -385,17 +446,17 @@
                     برادوهات ♕صواليين ♕هيلكسات ♕فرشنل ♕جمس ♕لكزز ♕فورد ♕سيارات حديثة وفخمة♕
                 </p>
             </div>
-            <button class="btn" onclick="openModal('land_transport', 'رحلات آمنة وممتعة (سيارات فورويل حديثة) 🚘')">احجز رحلتك الان</button>
+            <button class="btn" onclick="openModal('land_transport', 'رحلات برية (فورويل حديثة)')">احجز رحلتك الان</button>
         </div>
 
-        <!-- Bus Card (صورة الباص الأصلية المعادة) -->
+        <!-- Bus Card -->
         <div class="card">
             <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=800" alt="حافلة لنقل الركاب" class="card-img">
             <div>
                 <h3>نقل ركاب بأحدث السيارات والأسطول الحديث 🚌</h3>
                 <p>رحلات يومية ومستمرة من اليمن إلى عمان، السعودية والإمارات والعكس. حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.</p>
             </div>
-            <button class="btn" onclick="openModal('land_transport', 'نقل ركاب بأحدث السيارات والأسطول الحديث 🚌')">استفسر عن الرحلات</button>
+            <button class="btn" onclick="openLandTransportOptions()">استفسر عن الرحلات البرية</button>
         </div>
     </div>
 
@@ -405,7 +466,7 @@
         <div class="full-card-content">
             <h3>سيارات حديثة وسائقون محترفون 🛣️</h3>
             <p>راحتك في رحلتك تبدأ من أول خطوة! سفر مريح وأسعار تنافسية مصممة خصيصاً لراحتك.</p>
-            <button class="btn" onclick="openModal('land_transport', 'طلب سيارة وسائق')">طلب سيارة وسائق</button>
+            <button class="btn" onclick="openModal('land_transport', 'طلب سيارة وسائق خاصة')">طلب سيارة وسائق</button>
         </div>
     </div>
 
@@ -419,12 +480,12 @@
                 - حجز تذاكر نقل بري وطيران.<br>
                 - تأجير سيارات وحجز فنادق وإرسال واستقبال الطرود.
             </p>
-            <button class="btn" onclick="openModal('flight', 'حجز مشوار خاص')">احجز مشوارك الخاص</button>
+            <button class="btn" onclick="openFlightOptions()">احجز مشوارك الخاص</button>
         </div>
     </div>
 
-    <!-- Section Title: Visas & Shipping -->
-    <div class="sub-title">🌐 التأشيرات والحجوزات والشحن</div>
+    <!-- Section Title: Visas, Hotel & Security Approvals -->
+    <div class="sub-title">🌐 التأشيرات، المعاملات والشحن</div>
 
     <div class="grid-container-3">
         <!-- Oman Visa -->
@@ -432,13 +493,48 @@
             <div>
                 <h3>تأشيرات سلطنة عمان 🇴🇲</h3>
                 <p>
-                    - زيارة 21 يوم<br>
-                    - زيارة 3 أشهر متعددة<br>
-                    - عبور 5 أيام<br>
+                    - تأشيرة 21 يوم السياحية<br>
+                    - تأشيرة عبور عمان 5 أيام<br>
+                    - تأشيرة 3 أشهر متعددة<br>
                     <b>المطلوب:</b> صورة الجواز، صورة شخصية 4x6، اسم الأم، الغرض من الدخول، ضمانة العودة.
                 </p>
             </div>
-            <button class="btn" onclick="openModal('visa_oman', 'تأشيرات سلطنة عمان 🇴🇲')">طلب التأشيرة الان</button>
+            <button class="btn" onclick="openOmanVisaOptions()">طلب التأشيرة الان</button>
+        </div>
+
+        <!-- Family Visit -->
+        <div class="card">
+            <div>
+                <h3>معاملات الزيارة العائلية 👨‍👩‍👧‍👦</h3>
+                <p>
+                    متابعة وتسهيل إجراءات الزيارات العائلية لكافة الدول بسهولة ويسر.<br>
+                    <b>المتاحة:</b> السعودية، عمان، الإمارات.
+                </p>
+            </div>
+            <button class="btn" onclick="openFamilyVisitOptions()">طلب معاملة زيارة</button>
+        </div>
+
+        <!-- Security Approvals -->
+        <div class="card">
+            <div>
+                <h3>الموافقات الأمنية 📜</h3>
+                <p>
+                    تسهيل واستخراج الموافقات الأمنية وتصاريح السفر لمصر والأردن بسرعة وكفاءة عالية.
+                </p>
+            </div>
+            <button class="btn" onclick="openSecurityApprovalOptions()">طلب موافقة أمنية</button>
+        </div>
+
+        <!-- Hotels -->
+        <div class="card">
+            <div>
+                <h3>الحجوزات الفندقية 🏨</h3>
+                <p>
+                    حجز أفضل الفنادق بمختلف المستويات وتأكيد سريع لجميع الوجهات العالمية.<br>
+                    <b>المستويات:</b> 3 نجوم، 4 نجوم، 5 نجوم.
+                </p>
+            </div>
+            <button class="btn" onclick="openHotelBookingOptions()">احجز فندقك الان</button>
         </div>
 
         <!-- Flights -->
@@ -450,19 +546,19 @@
                     <b>المطلوب:</b> تحديد خط السفر وتاريخ الرحلة (مثال: من عدن إلى القاهرة).
                 </p>
             </div>
-            <button class="btn" onclick="openModal('flight', 'حجوزات الطيران ✈️')">احجز تذكرتك</button>
+            <button class="btn" onclick="openFlightOptions()">احجز تذكرتك</button>
         </div>
 
         <!-- Cargo -->
         <div class="card">
             <div>
-                <h3>الشحن الدولي للبضائع والعسل 📦</h3>
+                <h3>الشحن الدولي والمحلي لجميع انواع البضائع والمنتجات اليمنية 📦</h3>
                 <p>
                     شحن بري، جوي، وبحري لجميع البضائع والمنتجات اليمنية والعسل من وإلى كل دول العالم.<br>
                     <b>المطلوب:</b> اسم المرسل والمستلم، نوع الشحنة، الوزن، وصورة الشحنة.
                 </p>
             </div>
-            <button class="btn" onclick="openModal('shipping', 'الشحن الدولي للبضائع والعسل 📦')">أرسل شحنتك</button>
+            <button class="btn" onclick="openShippingOptions()">أرسل شحنتك</button>
         </div>
     </div>
 
@@ -470,12 +566,25 @@
     <div class="full-card">
         <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1000" alt="مكة المكرمة">
         <div class="full-card-content">
-            <h3>تأشيرات وحجوزات العمرة 🕋</h3>
+            <h3>خدمات الحج والعمرة 🕋</h3>
             <p>
-                استخراج تأشيرات العمرة وتنظيم رحلات المعتمرين بكل سهولة.<br>
+                استخراج تأشيرات العمرة والحج وتنظيم رحلات المعتمرين والحجاج بكل سهولة ورعاية كاملة.<br>
                 <b>المطلوب:</b> صورة الجواز، صورة إقامة المستضيف، وضمانة تجارية للعودة.
             </p>
-            <button class="btn" onclick="openModal('umrah', 'تأشيرات وحجوزات العمرة 🕋')">احجز عمرتك</button>
+            <button class="btn" onclick="openHajjUmrahOptions()">اختر خدمة الحج والعمرة</button>
+        </div>
+    </div>
+
+    <!-- Section Title: Available Countries -->
+    <div class="sub-title">✈️ دول متاحة لحاملي الجواز اليمني</div>
+
+    <!-- Available Countries Card -->
+    <div class="full-card">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1000" alt="سفر وتأشيرات دولية">
+        <div class="full-card-content">
+            <h3>دول متاحة لحاملي الجواز اليمني 🌐</h3>
+            <p>اختر الدولة المطلوبة واطلع على الشروط والتسهيلات المتاحة، ثم أكمل بياناتك وسنقوم بإكمال كافة الإجراءات فوراً.</p>
+            <button class="btn" onclick="openAvailableCountries()">عرض الدول المتاحة والتقديم</button>
         </div>
     </div>
 
@@ -535,12 +644,13 @@
     <div class="modal-overlay" id="orderModal">
         <div class="modal-card">
             <div class="modal-header">
+                <button class="back-link" id="backBtn" onclick="handleBackAction()">← رجوع</button>
                 <h3 id="modalTitle">تعبئة نموذج الطلب</h3>
                 <button class="close-btn" onclick="closeModal()">&times;</button>
             </div>
             <form id="dynamicForm" onsubmit="handleFormSubmit(event)">
                 <div id="formFields"></div>
-                <button type="submit" class="submit-btn">إرسال عبر واتساب 📲</button>
+                <button type="submit" class="submit-btn" id="submitBtn">إرسال عبر واتساب 📲</button>
             </form>
         </div>
     </div>
@@ -556,16 +666,282 @@
         const modal = document.getElementById('orderModal');
         const modalTitle = document.getElementById('modalTitle');
         const formFields = document.getElementById('formFields');
+        const backBtn = document.getElementById('backBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        
         let currentType = '';
         let currentServiceName = '';
+        let backAction = null;
 
-        function openModal(type, serviceName) {
+        // خيارات الحج والعمرة
+        function openHajjUmrahOptions() {
+            modalTitle.innerText = "خدمات الحج والعمرة 🕋";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر الخدمة المطلوبة:</p>
+                <div class="sub-options-grid" style="grid-template-columns: 1fr;">
+                    <button type="button" class="option-btn" onclick="openModal('umrah', 'تأشيرة عمرة', openHajjUmrahOptions)">تأشيرة عمرة</button>
+                    <button type="button" class="option-btn" onclick="openModal('hajj', 'حجز حج', openHajjUmrahOptions)">حجز حج</button>
+                    <button type="button" class="option-btn" onclick="openModal('umrah_program', 'برامج عمرة متكاملة', openHajjUmrahOptions)">برامج عمرة متكاملة</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // خيارات الحجوزات الفندقية (مُضافة حديثاً)
+        function openHotelBookingOptions() {
+            modalTitle.innerText = "الحجوزات الفندقية 🏨";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر مستوى الفندق:</p>
+                <div class="sub-options-grid" style="grid-template-columns: 1fr;">
+                    <button type="button" class="option-btn" onclick="openModal('hotel', 'حجز فندق 3 نجوم', openHotelBookingOptions)">فندق 3 نجوم</button>
+                    <button type="button" class="option-btn" onclick="openModal('hotel', 'حجز فندق 4 نجوم', openHotelBookingOptions)">فندق 4 نجوم</button>
+                    <button type="button" class="option-btn" onclick="openModal('hotel', 'حجز فندق 5 نجوم', openHotelBookingOptions)">فندق 5 نجوم</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // خيارات معاملة الزيارة العائلية (مُضافة حديثاً)
+        function openFamilyVisitOptions() {
+            modalTitle.innerText = "معاملة الزيارة العائلية 👨‍👩‍👧‍👦";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر وجهة الزيارة العائلية:</p>
+                <div class="sub-options-grid" style="grid-template-columns: 1fr;">
+                    <button type="button" class="option-btn" onclick="openModal('family_visit', 'زيارة عائلية - السعودية', openFamilyVisitOptions)">زيارة عائلية السعودية</button>
+                    <button type="button" class="option-btn" onclick="openModal('family_visit', 'زيارة عائلية - سلطنة عمان', openFamilyVisitOptions)">زيارة عائلية عمان</button>
+                    <button type="button" class="option-btn" onclick="openModal('family_visit', 'زيارة عائلية - الإمارات', openFamilyVisitOptions)">زيارة عائلية الإمارات</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // خيارات الموافقات الأمنية (مُضافة حديثاً)
+        function openSecurityApprovalOptions() {
+            modalTitle.innerText = "الموافقات الأمنية 📜";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر نوع الموافقة والجهة:</p>
+                <div class="sub-options-grid" style="grid-template-columns: 1fr;">
+                    <button type="button" class="option-btn" onclick="openModal('security', 'موافقة أمنية مصر (القدوم من داخل اليمن)', openSecurityApprovalOptions)">موافقة أمنية مصر (القدوم من داخل اليمن)</button>
+                    <button type="button" class="option-btn" onclick="openModal('security', 'موافقة أمنية مصر (القدوم من خارج اليمن)', openSecurityApprovalOptions)">موافقة أمنية مصر (القدوم من خارج اليمن)</button>
+                    <button type="button" class="option-btn" onclick="openModal('security', 'موافقة أمنية الأردن (القدوم من داخل اليمن)', openSecurityApprovalOptions)">موافقة أمنية الأردن (القدوم من داخل اليمن)</button>
+                    <button type="button" class="option-btn" onclick="openModal('security', 'موافقة أمنية الأردن (القدوم من خارج اليمن)', openSecurityApprovalOptions)">موافقة أمنية الأردن (القدوم من خارج اليمن)</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // خيارات النقل البري (مُضافة حديثاً)
+        function openLandTransportOptions() {
+            modalTitle.innerText = "النقل البري 🚌";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر الدولة وجهة النقل البري:</p>
+                <div class="sub-options-grid" style="grid-template-columns: 1fr;">
+                    <button type="button" class="option-btn" onclick="openModal('land_transport', 'نقل بري - السعودية', openLandTransportOptions)">السعودية</button>
+                    <button type="button" class="option-btn" onclick="openModal('land_transport', 'نقل بري - سلطنة عمان', openLandTransportOptions)">سلطنة عمان</button>
+                    <button type="button" class="option-btn" onclick="openModal('land_transport', 'نقل بري - الإمارات', openLandTransportOptions)">الإمارات</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // دول متاحة لحاملي الجواز اليمني
+        function openAvailableCountries() {
+            modalTitle.innerText = "دول متاحة لحاملي الجواز اليمني 🌍";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            const countriesList = [
+                'السعودية', 'الأردن', 'مصر', 'عمان',
+                'لبنان', 'إيران', 'سوريا', 'ماليزيا',
+                'باكستان', 'تايلاند', 'إندونيسيا', 'سنغافورة',
+                'سريلانكا', 'فييتنام', 'موريتانيا', 'كمبوديا',
+                'الصين', 'جزر السيشل', 'إثيوبيا', 'تنزانيا',
+                'كينيا', 'مدغشقر', 'أوغندا', 'جيبوتي',
+                'رواندا', 'جنوب السودان', 'الصومال'
+            ];
+
+            let html = `<p style="font-size:0.85rem; color: var(--text-sub); text-align:center; margin-bottom:12px;">اختر الدولة المطلوبة لإكمال الطلب:</p>`;
+            html += `<div class="countries-grid">`;
+            countriesList.forEach(country => {
+                html += `<button type="button" class="country-btn" onclick="openModal('yemeni_country', 'طلب سفر/تأشيرة: ${country}', openAvailableCountries, '${country}')">${country}</button>`;
+            });
+            html += `</div>`;
+
+            formFields.innerHTML = html;
+            modal.style.display = 'flex';
+        }
+
+        // خيارات تأشيرات سلطنة عمان
+        function openOmanVisaOptions() {
+            modalTitle.innerText = "تأشيرات سلطنة عمان 🇴🇲";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر نوع التأشيرة المطلوب:</p>
+                <div class="sub-options-grid" style="grid-template-columns: 1fr;">
+                    <button type="button" class="option-btn" onclick="openModal('visa_oman', 'تأشيرة 21 يوم السياحية', openOmanVisaOptions)">تأشيرة 21 يوم السياحية</button>
+                    <button type="button" class="option-btn" onclick="openModal('visa_oman', 'تأشيرة عبور عمان 5 أيام', openOmanVisaOptions)">تأشيرة عبور عمان 5 أيام</button>
+                    <button type="button" class="option-btn" onclick="openModal('visa_oman', 'تأشيرة 3 أشهر متعددة', openOmanVisaOptions)">تأشيرة 3 أشهر متعددة</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // خيارات حجوزات الطيران
+        function openFlightOptions() {
+            modalTitle.innerText = "حجوزات الطيران ✈️";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر الشركة أو نوع التذكرة المطلوب:</p>
+                <div class="sub-options-grid">
+                    <button type="button" class="option-btn" onclick="openModal('flight', 'تذاكر طيران دولية', openFlightOptions)">تذاكر طيران دولية</button>
+                    <button type="button" class="option-btn" onclick="openModal('flight', 'الخطوط الجوية اليمنية', openFlightOptions)">تذاكر طيران اليمنية</button>
+                    <button type="button" class="option-btn" onclick="openModal('flight', 'تذاكر طيران فلاي عدن', openFlightOptions)">تذاكر طيران فلاي عدن</button>
+                    <button type="button" class="option-btn" onclick="openModal('flight', 'تذاكر طيران الملكة بلقيس', openFlightOptions)">تذاكر طيران الملكة بلقيس</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // خيارات خدمة الشحن
+        function openShippingOptions() {
+            modalTitle.innerText = "الشحن الدولي والمحلي 📦";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر نوع خدمة الشحن المطلوب:</p>
+                <div class="sub-options-grid">
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'إرسال رسالة/طرد دولي', openShippingOptions)">إرسال رسالة/طرد دولي</button>
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'إرسال العسل والمنتجات اليمنية', openShippingOptions)">إرسال العسل والمنتجات اليمنية إلى جميع بلدان العالم</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function handleBackAction() {
+            if (typeof backAction === 'function') {
+                backAction();
+            }
+        }
+
+        // فتح نموذج إدخال البيانات بالاعتماد على الخدمة المختارة
+        function openModal(type, serviceName, backFunction = null, extraParam = '') {
             currentType = type;
             currentServiceName = serviceName;
             modalTitle.innerText = serviceName;
             formFields.innerHTML = '';
+            submitBtn.style.display = 'block';
 
-            if (type === 'shipping') {
+            if (backFunction) {
+                backAction = backFunction;
+                backBtn.style.display = 'inline-block';
+            } else {
+                backBtn.style.display = 'none';
+            }
+
+            if (type === 'hotel') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم الكامل:</label><input type="text" id="custName" required placeholder="أدخل الاسم"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
+                    <div class="form-group"><label>المدينة/الدولة:</label><input type="text" id="destination" required placeholder="مثال: القاهرة / مكة"></div>
+                    <div class="form-group"><label>تاريخ الوصول:</label><input type="date" id="checkIn" required></div>
+                    <div class="form-group"><label>تاريخ المغادرة:</label><input type="date" id="checkOut" required></div>
+                    <div class="form-group"><label>عدد الغرف والأفراد:</label><input type="text" id="roomCount" placeholder="مثال: غرفة لشخصين"></div>
+                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="أي طلبات خاصة"></textarea></div>
+                `;
+            }
+            else if (type === 'family_visit' || type === 'security') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم الكامل:</label><input type="text" id="custName" required placeholder="أدخل الاسم الكامل كما بالجواز"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
+                    <div class="form-group"><label>الجنسية:</label><input type="text" id="nationality" value="يمني" required></div>
+                    <div class="form-group"><label>تاريخ السفر المتوقع:</label><input type="date" id="travelDate"></div>
+                    <div class="form-group"><label>ملاحظات/استفسارات:</label><textarea id="notes" rows="2" placeholder="أدخل أي تفاصيل أخرى"></textarea></div>
+                `;
+            }
+            else if (type === 'yemeni_country') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم الكامل:</label><input type="text" id="custName" required placeholder="أدخل الاسم مثلما في الجواز"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف مع الرمز"></div>
+                    <div class="form-group"><label>الدولة المختارة:</label><input type="text" id="targetCountry" value="${extraParam}" readonly style="opacity:0.8;"></div>
+                    <div class="form-group"><label>تاريخ السفر المتوقع:</label><input type="date" id="travelDate" required></div>
+                    <div class="form-group"><label>هل يوجد جواز سفر جاهز؟:</label>
+                        <select id="hasPassport">
+                            <option value="نعم">نعم</option>
+                            <option value="لا">لا</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>ملاحظات/استفسارات إضافية:</label><textarea id="notes" rows="2" placeholder="أي تفاصيل ترغب بذكرها"></textarea></div>
+                `;
+            }
+            else if (type === 'hajj' || type === 'umrah_program' || type === 'umrah') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم:</label><input type="text" id="custName" required placeholder="أدخل الاسم"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
+                    <div class="form-group"><label>عدد الأشخاص:</label><input type="number" id="umrahCount" min="1" value="1" required></div>
+                    <div class="form-group"><label>تاريخ السفر المتوقع:</label><input type="date" id="travelDate" required></div>
+                    <div class="form-group"><label>المدينة/المحافظة:</label><input type="text" id="city" required placeholder="مثال: صنعاء / عدن"></div>
+                    <div class="form-group"><label>هل يوجد جواز سفر؟:</label>
+                        <select id="hasPassport">
+                            <option value="نعم">نعم</option>
+                            <option value="لا">لا</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="أي ملاحظات أخرى"></textarea></div>
+                `;
+            }
+            else if (type === 'visa_oman') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم الكامل:</label><input type="text" id="custName" required placeholder="أدخل الاسم كاملاً كما هو بالجواز"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
+                    <div class="form-group"><label>ملاحظات (اسم الأم / الغرض من الدخول):</label><textarea id="notes" rows="3" placeholder="أدخل اسم الأم أو أي معلومات أخرى"></textarea></div>
+                `;
+            }
+            else if (type === 'flight') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم الكامل:</label><input type="text" id="custName" required placeholder="أدخل الاسم الكامل"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
+                    <div class="form-group"><label>من (مدينة المغادرة):</label><input type="text" id="fromCity" required placeholder="مثال: عدن"></div>
+                    <div class="form-group"><label>إلى (مدينة الوصول):</label><input type="text" id="toCity" required placeholder="مثال: القاهرة"></div>
+                    <div class="form-group"><label>تاريخ السفر:</label><input type="date" id="travelDate" required></div>
+                    <div class="form-group"><label>عدد المسافرين:</label><input type="number" id="passengersCount" min="1" value="1" required></div>
+                    <div class="form-group"><label>نوع الرحلة:</label>
+                        <select id="flightType">
+                            <option value="ذهاب وعودة">ذهاب وعودة</option>
+                            <option value="ذهاب فقط">ذهاب فقط</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="أني ملاحظات أخرى"></textarea></div>
+                `;
+            } 
+            else if (type === 'shipping') {
                 formFields.innerHTML = `
                     <div class="form-group"><label>اسم المرسل:</label><input type="text" id="senderName" required placeholder="أدخل اسم المرسل"></div>
                     <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
@@ -573,11 +949,12 @@
                     <div class="form-group"><label>دولة الوصول:</label><input type="text" id="toCountry" required placeholder="مثال: الإمارات"></div>
                     <div class="form-group"><label>نوع الشحنة:</label><input type="text" id="cargoType" required placeholder="عسل، بضائع، طرد..."></div>
                     <div class="form-group"><label>الوزن التقريبي:</label><input type="text" id="weight" placeholder="مثال: 10 كجم"></div>
-                    <div class="form-group"><label>عدد الطرود:</label><input type="number" id="packagesCount" min="1" value="1"></div>
+                    <div class="form-group"><label>عدد الطرود:</label><input type="number" id="packagesCount" min="1" value="1" required></div>
                     <div class="form-group"><label>القيمة التقريبية:</label><input type="text" id="approxValue" placeholder="مثال: 500 دولار"></div>
                     <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="أي تفاصيل أخرى"></textarea></div>
                 `;
-            } else if (type === 'land_transport') {
+            } 
+            else if (type === 'land_transport') {
                 formFields.innerHTML = `
                     <div class="form-group"><label>الاسم:</label><input type="text" id="custName" required placeholder="أدخل الاسم"></div>
                     <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
@@ -586,51 +963,7 @@
                     <div class="form-group"><label>تاريخ الرحلة:</label><input type="date" id="travelDate" required></div>
                     <div class="form-group"><label>عدد الركاب:</label><input type="number" id="passengersCount" min="1" value="1" required></div>
                     <div class="form-group"><label>نوع السيارة:</label><input type="text" id="carType" placeholder="فورويل، باص، صالون..."></div>
-                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="تفاصيل إضافية"></textarea></div>
-                `;
-            } else if (type === 'umrah') {
-                formFields.innerHTML = `
-                    <div class="form-group"><label>الاسم:</label><input type="text" id="custName" required placeholder="أدخل الاسم"></div>
-                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
-                    <div class="form-group"><label>عدد المعتمرين:</label><input type="number" id="umrahCount" min="1" value="1" required></div>
-                    <div class="form-group"><label>تاريخ السفر:</label><input type="date" id="travelDate" required></div>
-                    <div class="form-group"><label>المدينة:</label><input type="text" id="city" required placeholder="مثال: صنعاء / عدن"></div>
-                    <div class="form-group"><label>هل يوجد جواز؟</label>
-                        <select id="hasPassport">
-                            <option value="نعم">نعم</option>
-                            <option value="لا">لا</option>
-                        </select>
-                    </div>
-                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="أي تفاصيل أخرى"></textarea></div>
-                `;
-            } else if (type === 'flight') {
-                formFields.innerHTML = `
-                    <div class="form-group"><label>الاسم:</label><input type="text" id="custName" required placeholder="أدخل الاسم"></div>
-                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم التواصل"></div>
-                    <div class="form-group"><label>من:</label><input type="text" id="fromCity" required placeholder="مثال: عدن"></div>
-                    <div class="form-group"><label>إلى:</label><input type="text" id="toCity" required placeholder="مثال: القاهرة"></div>
-                    <div class="form-group"><label>تاريخ السفر:</label><input type="date" id="travelDate" required></div>
-                    <div class="form-group"><label>عدد المسافرين:</label><input type="number" id="passengersCount" min="1" value="1"></div>
-                    <div class="form-group"><label>نوع الرحلة:</label>
-                        <select id="flightType">
-                            <option value="ذهاب وعودة">ذهاب وعودة</option>
-                            <option value="ذهاب فقط">ذهاب فقط</option>
-                        </select>
-                    </div>
                     <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="ملاحظات أخرى"></textarea></div>
-                `;
-            } else if (type === 'visa_oman') {
-                formFields.innerHTML = `
-                    <div class="form-group"><label>الاسم:</label><input type="text" id="custName" required placeholder="أدخل الاسم كاملاً"></div>
-                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
-                    <div class="form-group"><label>نوع التأشيرة المطلوب:</label>
-                        <select id="visaType">
-                            <option value="زيارة 21 يوم">زيارة 21 يوم</option>
-                            <option value="زيارة 3 أشهر متعددة">زيارة 3 أشهر متعددة</option>
-                            <option value="عبور 5 أيام">عبور 5 أيام</option>
-                        </select>
-                    </div>
-                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="اسم الأم أو الغرض من الدخول"></textarea></div>
                 `;
             }
 
@@ -647,15 +980,64 @@
             }
         }
 
+        // صياغة الرسالة للواتساب بشكل منظم
         function handleFormSubmit(event) {
             event.preventDefault();
 
             let msg = `طلب جديد\n\n`;
             msg += `الخدمة:\n${currentServiceName}\n\n`;
 
-            if (currentType === 'shipping') {
-                msg += `اسم المرسل:\n${document.getElementById('senderName').value}\n\n`;
+            if (currentType === 'hotel') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
+                msg += `رقم الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `الوجهة:\n${document.getElementById('destination').value}\n\n`;
+                msg += `تاريخ الوصول:\n${document.getElementById('checkIn').value}\n\n`;
+                msg += `تاريخ المغادرة:\n${document.getElementById('checkOut').value}\n\n`;
+                msg += `الغرف والأفراد:\n${document.getElementById('roomCount').value || 'غير محدد'}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            }
+            else if (currentType === 'family_visit' || currentType === 'security') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
+                msg += `رقم الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `الجنسية:\n${document.getElementById('nationality').value}\n\n`;
+                msg += `تاريخ السفر المتوقع:\n${document.getElementById('travelDate').value || 'غير محدد'}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            }
+            else if (currentType === 'yemeni_country') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
+                msg += `رقم الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `الدولة المطلوبة:\n${document.getElementById('targetCountry').value}\n\n`;
+                msg += `تاريخ السفر:\n${document.getElementById('travelDate').value}\n\n`;
+                msg += `وجود جواز السفر:\n${document.getElementById('hasPassport').value}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            }
+            else if (currentType === 'hajj' || currentType === 'umrah_program' || currentType === 'umrah') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
+                msg += `رقم الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `عدد الأشخاص:\n${document.getElementById('umrahCount').value}\n\n`;
+                msg += `تاريخ السفر:\n${document.getElementById('travelDate').value}\n\n`;
+                msg += `المدينة:\n${document.getElementById('city').value}\n\n`;
+                msg += `هل يوجد جواز؟:\n${document.getElementById('hasPassport').value}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            }
+            else if (currentType === 'visa_oman') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
+                msg += `رقم الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            }
+            else if (currentType === 'flight') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
                 msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `من:\n${document.getElementById('fromCity').value}\n\n`;
+                msg += `إلى:\n${document.getElementById('toCity').value}\n\n`;
+                msg += `تاريخ السفر:\n${document.getElementById('travelDate').value}\n\n`;
+                msg += `عدد المسافرين:\n${document.getElementById('passengersCount').value}\n\n`;
+                msg += `نوع الرحلة:\n${document.getElementById('flightType').value}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            } 
+            else if (currentType === 'shipping') {
+                msg += `اسم المرسل:\n${document.getElementById('senderName').value}\n\n`;
+                msg += `رقم الهاتف:\n${document.getElementById('phone').value}\n\n`;
                 msg += `دولة الإرسال:\n${document.getElementById('fromCountry').value}\n\n`;
                 msg += `دولة الوصول:\n${document.getElementById('toCountry').value}\n\n`;
                 msg += `نوع الشحنة:\n${document.getElementById('cargoType').value}\n\n`;
@@ -666,37 +1048,12 @@
             } 
             else if (currentType === 'land_transport') {
                 msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
-                msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `رقم الهاتف:\n${document.getElementById('phone').value}\n\n`;
                 msg += `مدينة الانطلاق:\n${document.getElementById('fromCity').value}\n\n`;
                 msg += `مدينة الوصول:\n${document.getElementById('toCity').value}\n\n`;
                 msg += `تاريخ الرحلة:\n${document.getElementById('travelDate').value}\n\n`;
                 msg += `عدد الركاب:\n${document.getElementById('passengersCount').value}\n\n`;
                 msg += `نوع السيارة:\n${document.getElementById('carType').value || 'غير محدد'}\n\n`;
-                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
-            } 
-            else if (currentType === 'umrah') {
-                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
-                msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
-                msg += `عدد المعتمرين:\n${document.getElementById('umrahCount').value}\n\n`;
-                msg += `تاريخ السفر:\n${document.getElementById('travelDate').value}\n\n`;
-                msg += `المدينة:\n${document.getElementById('city').value}\n\n`;
-                msg += `هل يوجد جواز؟:\n${document.getElementById('hasPassport').value}\n\n`;
-                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
-            } 
-            else if (currentType === 'flight') {
-                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
-                msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
-                msg += `من:\n${document.getElementById('fromCity').value}\n\n`;
-                msg += `إلى:\n${document.getElementById('toCity').value}\n\n`;
-                msg += `تاريخ السفر:\n${document.getElementById('travelDate').value}\n\n`;
-                msg += `عدد المسافرين:\n${document.getElementById('passengersCount').value}\n\n`;
-                msg += `نوع الرحلة:\n${document.getElementById('flightType').value}\n\n`;
-                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
-            }
-            else if (currentType === 'visa_oman') {
-                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
-                msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
-                msg += `نوع التأشيرة:\n${document.getElementById('visaType').value}\n\n`;
                 msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
             }
 
