@@ -6,13 +6,15 @@
     <title>شركة ومكاتب الوليدي للسفريات والسياحة والخدمات اللوجستية</title>
     <style>
         :root {
-            --bg-color: #0d1b2a;
-            --card-bg: #1b263b;
+            --bg-color: #0b132b;
+            --card-bg: #1c2541;
             --accent-blue: #0084ff;
             --accent-hover: #0066cc;
             --text-main: #ffffff;
-            --text-sub: #e0e1dd;
-            --text-muted: #778da9;
+            --text-sub: #d1d5db;
+            --text-muted: #8d99ae;
+            --warning-bg: rgba(255, 193, 7, 0.08);
+            --warning-border: #ffc107;
         }
 
         * {
@@ -33,35 +35,35 @@
         /* Header Section */
         .header {
             text-align: center;
-            padding: 15px 10px;
-            margin-bottom: 15px;
+            padding: 10px 5px 20px 5px;
         }
 
         .header h1 {
             color: #1e90ff;
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             margin-bottom: 10px;
             line-height: 1.5;
+            font-weight: bold;
         }
 
         .header p {
             color: var(--text-sub);
-            font-size: 0.85rem;
-            line-height: 1.6;
+            font-size: 0.8rem;
+            line-height: 1.5;
         }
 
-        /* Banner Card */
+        /* Hero Banner */
         .hero-banner {
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1000') center/cover no-repeat;
             border-radius: 12px;
-            height: 220px;
+            height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 20px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
@@ -71,51 +73,51 @@
         }
 
         .hero-banner p {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: #d1d5db;
         }
 
-        /* Section Titles */
-        .section-title {
-            font-size: 0.9rem;
+        /* Titles & Announcements */
+        .announcement-bar {
+            background-color: rgba(30, 144, 255, 0.12);
             color: #1e90ff;
-            margin-bottom: 15px;
-            line-height: 1.6;
-            background-color: rgba(30, 144, 255, 0.1);
             padding: 12px;
             border-radius: 8px;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
             border-right: 4px solid #1e90ff;
         }
 
         .sub-title {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: bold;
             color: #1e90ff;
-            margin: 25px 0 15px 0;
+            margin: 20px 0 15px 0;
             text-align: center;
             line-height: 1.5;
         }
 
-        /* Grid Section */
+        /* Grids */
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 15px;
         }
 
         .grid-container-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 10px;
+            margin-bottom: 15px;
         }
 
+        /* Cards */
         .card {
             background-color: var(--card-bg);
             border-radius: 10px;
-            overflow: hidden;
-            padding: 15px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -123,74 +125,23 @@
 
         .card-img {
             width: 100%;
-            height: 140px;
+            height: 120px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .card h3 {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin-bottom: 8px;
             line-height: 1.3;
         }
 
         .card p {
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             color: var(--text-sub);
             line-height: 1.5;
-            margin-bottom: 15px;
-        }
-
-        /* Branch Card Styles */
-        .branch-item {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 12px;
             margin-bottom: 12px;
-            border-right: 3px solid #1e90ff;
-        }
-
-        .branch-item h4 {
-            color: #1e90ff;
-            font-size: 0.95rem;
-            margin-bottom: 6px;
-        }
-
-        .branch-item p {
-            font-size: 0.8rem;
-            margin-bottom: 6px;
-            line-height: 1.5;
-        }
-
-        .customer-service {
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 6px;
-            padding: 8px;
-            font-size: 0.75rem;
-            color: #ffd700;
-            margin-top: 6px;
-        }
-
-        /* Buttons */
-        .btn, .btn-book {
-            background-color: var(--accent-blue);
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        .btn:hover, .btn-book:hover {
-            background-color: var(--accent-hover);
         }
 
         /* Full Width Card */
@@ -198,69 +149,194 @@
             background-color: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .full-card img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
         }
 
         .full-card-content {
-            padding: 15px;
+            padding: 12px;
         }
 
         .full-card h3 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 6px;
         }
 
         .full-card p {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-sub);
             margin-bottom: 12px;
             line-height: 1.5;
         }
 
-        /* Floating Action Buttons */
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
+        /* Buttons */
+        .btn {
+            background-color: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.82rem;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Branches Section */
+        .branches-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            z-index: 1000;
+            gap: 12px;
+            margin-bottom: 20px;
         }
 
-        .float-btn {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
+        .branch-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 12px;
+            border-right: 4px solid var(--accent-blue);
+        }
+
+        .branch-card h3 {
+            font-size: 0.9rem;
+            color: #1e90ff;
+            margin-bottom: 6px;
+        }
+
+        .branch-card .contact-num {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-right: 3px solid var(--warning-border);
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: #ffda6a;
+            line-height: 1.5;
+        }
+
+        .warning-box p {
+            margin-bottom: 2px;
+        }
+
+        /* Modal Overlay & Forms */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
             justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            align-items: center;
+            z-index: 2000;
+            padding: 15px;
         }
 
-        .telegram-btn { background-color: #0088cc; }
-        .whatsapp-btn { background-color: #25d366; }
+        .modal-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 450px;
+            padding: 18px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+
+        .modal-header h3 {
+            color: #1e90ff;
+            font-size: 1rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            margin-bottom: 4px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: var(--bg-color);
+            color: #fff;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .submit-btn {
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 8px;
+        }
 
         footer {
             text-align: center;
-            padding: 20px 0;
+            padding: 15px 0;
             color: var(--text-muted);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 30px;
+            margin-top: 25px;
         }
 
         footer p {
-            margin: 4px 0;
+            margin: 3px 0;
         }
 
         @media (max-width: 768px) {
@@ -284,56 +360,56 @@
         <p>نسهل لك إجراءات المعاملات بأعلى سرعة وأقل تكلفة</p>
     </div>
 
-    <!-- العبارة المحدثة -->
-    <div class="section-title">
-        كل وجهه اقرب /خدمات سفر متميزه /برامج سياحيه منضمه /خدمات شحن آمنه /خدمات نقل متكامله /كل ما عليك هو تحديد وجهتك او شحنتك وعلينا الباقي 😍
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        كل وجهه اقرب /خدمات سفر متميزة /برامج سياحيه منظمه /خدمات شحن آمنه /خدمات نقل متكامله /كل ما عليك هو تحديد وجهتك أو شحنتك وعلينا الباقي 😍
     </div>
 
-    <!-- عنوان قسم الرحلات البرية VIP -->
+    <!-- Section Title -->
     <div class="sub-title">
-        🤩 قسم الرحلات البريه بأحدث السيارات الحديثة Vip😍 من اليمن الى الامارات السعودية عُمان والعكس 💎💎
+        😍 قسم الرحلات البريه بأحدث السيارات الحديثة Vip💎💎 من اليمن الى الامارات السعودية عمان والعكس
     </div>
 
-    <!-- Cards Grid -->
+    <!-- Transport Grid -->
     <div class="grid-container">
-        <!-- Card 1 -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=600" alt="نقل ركاب بأحدث الحافلات" class="card-img">
-            <div>
-                <h3>نقل ركاب بأحدث السيارات والأسطول الحديث 🚌</h3>
-                <p>رحلات يومية ومستمرة من اليمن إلى عمان، السعودية والإمارات والعكس. حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.</p>
-            </div>
-            <a href="https://wa.me/967782111532" class="btn-book">استفسر عن الرحلات</a>
-        </div>
-
-        <!-- Card 2 -->
+        <!-- Four Wheel Card -->
         <div class="card">
             <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600" alt="سيارة فورويل" class="card-img">
             <div>
                 <h3>رحلات آمنة وممتعة (سيارات فورويل حديثة) 🚘</h3>
                 <p>
-                    .: خدماتنا المتواضعة❓ /🤩🤩🤩<br>
+                    .: خدماتنا المتواضعة ❓ /😍🤩😍<br>
                     ركاب /مشاوير خاصه /مشاوير عائليه /انجيز /<br><br>
-                    رحلاتنا مستمرة يوميا من جميع المحافظات اليمنيه الى جميع مدن السعودية وئلى جميع ولايات سلطنة عُمان والامارات والعكس ♕<br><br>
-                    .: اصطول سياراتنا /💎<br>
-                    برادوهات ♕صواليين♕هيلكسات♕فرشنل ♕جمس♕لكزز♕فورد♕♕سيارات حديثة وفخمة♕
+                    رحلاتنا مستمرة يومياً من جميع المحافظات اليمنيه الى جميع مدن السعودية وإلى جميع ولايات سلطنة عمان والامارات والعكس ♕<br><br>
+                    .: اسطول سياراتنا /💎<br>
+                    برادوهات ♕صواليين ♕هيلكسات ♕فرشنل ♕جمس ♕لكزز ♕فورد ♕سيارات حديثة وفخمة♕
                 </p>
             </div>
-            <a href="https://wa.me/967782111532" class="btn">احجز رحلتك الآن</a>
+            <button class="btn" onclick="openModal('land_transport', 'رحلات آمنة وممتعة (سيارات فورويل حديثة) 🚘')">احجز رحلتك الان</button>
+        </div>
+
+        <!-- Bus Card (صورة الباص الأصلية المعادة) -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=800" alt="حافلة لنقل الركاب" class="card-img">
+            <div>
+                <h3>نقل ركاب بأحدث السيارات والأسطول الحديث 🚌</h3>
+                <p>رحلات يومية ومستمرة من اليمن إلى عمان، السعودية والإمارات والعكس. حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.</p>
+            </div>
+            <button class="btn" onclick="openModal('land_transport', 'نقل ركاب بأحدث السيارات والأسطول الحديث 🚌')">استفسر عن الرحلات</button>
         </div>
     </div>
 
-    <!-- Full Width Feature Card (سيارات حديثة وسائقون) -->
+    <!-- Toyota Truck Full Card -->
     <div class="full-card">
-        <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?q=80&w=1000" alt="سيارة وسائق">
+        <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?q=80&w=1000" alt="سيارات حديثة">
         <div class="full-card-content">
             <h3>سيارات حديثة وسائقون محترفون 🛣️</h3>
             <p>راحتك في رحلتك تبدأ من أول خطوة! سفر مريح وأسعار تنافسية مصممة خصيصاً لراحتك.</p>
-            <a href="https://wa.me/967782111532" class="btn">طلب سيارة وسائق</a>
+            <button class="btn" onclick="openModal('land_transport', 'طلب سيارة وسائق')">طلب سيارة وسائق</button>
         </div>
     </div>
 
-    <!-- Full Width Card (نختار لك الأفضل) -->
+    <!-- Beach Full Card -->
     <div class="full-card">
         <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000" alt="شاطئ وسياحة">
         <div class="full-card-content">
@@ -343,15 +419,15 @@
                 - حجز تذاكر نقل بري وطيران.<br>
                 - تأجير سيارات وحجز فنادق وإرسال واستقبال الطرود.
             </p>
-            <a href="https://wa.me/967782111532" class="btn">احجز مشوارك الخاص</a>
+            <button class="btn" onclick="openModal('flight', 'حجز مشوار خاص')">احجز مشوارك الخاص</button>
         </div>
     </div>
 
-    <!-- قسم التأشيرات والحجوزات والشحن -->
+    <!-- Section Title: Visas & Shipping -->
     <div class="sub-title">🌐 التأشيرات والحجوزات والشحن</div>
 
     <div class="grid-container-3">
-        <!-- كارت سلطنة عمان -->
+        <!-- Oman Visa -->
         <div class="card">
             <div>
                 <h3>تأشيرات سلطنة عمان 🇴🇲</h3>
@@ -362,10 +438,10 @@
                     <b>المطلوب:</b> صورة الجواز، صورة شخصية 4x6، اسم الأم، الغرض من الدخول، ضمانة العودة.
                 </p>
             </div>
-            <a href="https://wa.me/967782111532" class="btn">طلب التأشيرة الآن</a>
+            <button class="btn" onclick="openModal('visa_oman', 'تأشيرات سلطنة عمان 🇴🇲')">طلب التأشيرة الان</button>
         </div>
 
-        <!-- كارت حجوزات الطيران -->
+        <!-- Flights -->
         <div class="card">
             <div>
                 <h3>حجوزات الطيران ✈️</h3>
@@ -374,10 +450,10 @@
                     <b>المطلوب:</b> تحديد خط السفر وتاريخ الرحلة (مثال: من عدن إلى القاهرة).
                 </p>
             </div>
-            <a href="https://wa.me/967782111532" class="btn">احجز تذكرتك</a>
+            <button class="btn" onclick="openModal('flight', 'حجوزات الطيران ✈️')">احجز تذكرتك</button>
         </div>
 
-        <!-- كارت الشحن الدولي -->
+        <!-- Cargo -->
         <div class="card">
             <div>
                 <h3>الشحن الدولي للبضائع والعسل 📦</h3>
@@ -386,11 +462,11 @@
                     <b>المطلوب:</b> اسم المرسل والمستلم، نوع الشحنة، الوزن، وصورة الشحنة.
                 </p>
             </div>
-            <a href="https://wa.me/967782111532" class="btn">أرسل شحنتك</a>
+            <button class="btn" onclick="openModal('shipping', 'الشحن الدولي للبضائع والعسل 📦')">أرسل شحنتك</button>
         </div>
     </div>
 
-    <!-- كارت العمرة -->
+    <!-- Umrah Full Card -->
     <div class="full-card">
         <img src="https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?q=80&w=1000" alt="مكة المكرمة">
         <div class="full-card-content">
@@ -399,79 +475,237 @@
                 استخراج تأشيرات العمرة وتنظيم رحلات المعتمرين بكل سهولة.<br>
                 <b>المطلوب:</b> صورة الجواز، صورة إقامة المستضيف، وضمانة تجارية للعودة.
             </p>
-            <a href="https://wa.me/967782111532" class="btn">احجز عمرتك</a>
+            <button class="btn" onclick="openModal('umrah', 'تأشيرات وحجوزات العمرة 🕋')">احجز عمرتك</button>
         </div>
     </div>
 
-    <!-- قسم الفروع الجديد -->
+    <!-- Branches Section -->
     <div class="sub-title">🏢 فروع مكاتب وشركات الوليدي للسفريات والسياحة والخدمات اللوجستية</div>
 
-    <div class="full-card">
-        <div class="full-card-content">
-            
-            <!-- الفرع الأول -->
-            <div class="branch-item">
-                <h4>1️⃣ مكتب الوليدي - فرع صنعاء</h4>
-                <p><b>أرقام التواصل:</b> 782444619 / 730005987</p>
-                <div class="customer-service">
-                    ⚠️ في حال عدم الرد من فرع صنعاء يرجى التواصل مع خدمة العملاء:<br>
-                    📱 الرقم اليمني: <b>774976365</b><br>
-                    🇴🇲 الرقم العماني: <b>+96893893413</b>
-                </div>
+    <div class="branches-container">
+        <!-- Branch 1 -->
+        <div class="branch-card">
+            <h3>1️⃣ مكتب الوليدي - فرع صنعاء</h3>
+            <p class="contact-num">أرقام التواصل: 782444619 / 730005987</p>
+            <div class="warning-box">
+                <p>⚠️ في حالة لم يتم الرد من فرع صنعاء التواصل مع خدمة العملاء:</p>
+                <p>الرقم اليمني: 774976365 🇾🇪</p>
+                <p>الرقم العماني: +96893893413 🇴🇲</p>
             </div>
+        </div>
 
-            <!-- الفرع الثاني -->
-            <div class="branch-item">
-                <h4>2️⃣ مكتب الوليدي - فرع صلالة</h4>
-                <p><b>رقم التواصل:</b> +96892037867</p>
-                <div class="customer-service">
-                    ⚠️ في حال عدم الرد من فرع صلالة يرجى التواصل مع خدمة العملاء:<br>
-                    📱 الرقم اليمني: <b>774976365</b><br>
-                    🇴🇲 الرقم العماني: <b>+96893893413</b>
-                </div>
+        <!-- Branch 2 -->
+        <div class="branch-card">
+            <h3>2️⃣ مكتب الوليدي - فرع صلالة</h3>
+            <p class="contact-num">رقم التواصل: +96892037867</p>
+            <div class="warning-box">
+                <p>⚠️ في حالة لم يتم الرد من الفرع التواصل مع خدمة العملاء:</p>
+                <p>الرقم اليمني: 774976365 🇾🇪</p>
+                <p>الرقم العماني: +96893893413 🇴🇲</p>
             </div>
+        </div>
 
-            <!-- الفرع الثالث -->
-            <div class="branch-item">
-                <h4>3️⃣ مكتب الوليدي - فرع سيئون</h4>
-                <p><b>أرقام التواصل:</b> 782444618 / 739855613</p>
-                <div class="customer-service">
-                    ⚠️ في حال عدم الرد من فرع سيئون يرجى التواصل مع خدمة العملاء:<br>
-                    📱 الرقم اليمني: <b>774976365</b><br>
-                    🇴🇲 الرقم العماني: <b>+96893893413</b>
-                </div>
+        <!-- Branch 3 -->
+        <div class="branch-card">
+            <h3>3️⃣ مكتب الوليدي - فرع سيئون</h3>
+            <p class="contact-num">أرقام التواصل: 782444618 / 739855613</p>
+            <div class="warning-box">
+                <p>⚠️ في حالة لم يتم الرد من فرع سيئون التواصل مع خدمة العملاء:</p>
+                <p>الرقم اليمني: 774976365 🇾🇪</p>
+                <p>الرقم العماني: +96893893413 🇴🇲</p>
             </div>
+        </div>
 
-            <!-- الفرع الرابع -->
-            <div class="branch-item">
-                <h4>4️⃣ مكتب الوليدي - فرع شحن</h4>
-                <p><b>رقم التواصل:</b> 782087250</p>
-                <div class="customer-service">
-                    ⚠️ في حال عدم الرد من فرع شحن يرجى التواصل مع خدمة العملاء:<br>
-                    📱 الرقم اليمني: <b>774976365</b><br>
-                    🇴🇲 الرقم العماني: <b>+96893893413</b>
-                </div>
+        <!-- Branch 4 -->
+        <div class="branch-card">
+            <h3>4️⃣ مكتب الوليدي - فرع شحن</h3>
+            <p class="contact-num">رقم التواصل: 782087250</p>
+            <div class="warning-box">
+                <p>⚠️ في حالة لم يتم الرد من فرع شحن التواصل مع خدمة العملاء:</p>
+                <p>الرقم اليمني: 774976365 🇾🇪</p>
+                <p>الرقم العماني: +96893893413 🇴🇲</p>
             </div>
-
-            <a href="https://wa.me/967774976365" class="btn" style="margin-top: 15px;">تواصل مع خدمة العملاء مباشرة عبر الواتساب</a>
         </div>
     </div>
 
-    <!-- الأزرار العائمة -->
-    <div class="floating-buttons">
-        <a href="https://t.me/Offices_AlWalidi_bot" class="float-btn telegram-btn" target="_blank">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.38-.49 1.07-.75 4.19-1.82 6.98-3.02 8.38-3.6 3.98-1.66 4.81-1.95 5.35-1.96.12 0 .38.03.55.17.14.12.18.28.2.45-.02.07-.02.13-.03.22z"/></svg>
-        </a>
-        <a href="https://wa.me/967782111532" class="float-btn whatsapp-btn" target="_blank">
-            <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        </a>
+    <!-- Customer Support Button -->
+    <a href="https://wa.me/967774976365" class="btn" style="margin-bottom: 20px; padding: 12px; font-size: 0.9rem;">تواصل مع خدمة العملاء مباشرة عبر الواتساب</a>
+
+    <!-- Modal Form -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modalTitle">تعبئة نموذج الطلب</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="dynamicForm" onsubmit="handleFormSubmit(event)">
+                <div id="formFields"></div>
+                <button type="submit" class="submit-btn">إرسال عبر واتساب 📲</button>
+            </form>
+        </div>
     </div>
 
-    <!-- الفوتر Footer -->
+    <!-- Footer -->
     <footer>
         <p>© 2026 شركة ومكاتب الوليدي للسفريات والسياحة والخدمات اللوجستية | جميع الحقوق محفوظة</p>
         <p>782111532 :للتواصل المباشر</p>
     </footer>
 
+    <!-- JavaScript -->
+    <script>
+        const modal = document.getElementById('orderModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const formFields = document.getElementById('formFields');
+        let currentType = '';
+        let currentServiceName = '';
+
+        function openModal(type, serviceName) {
+            currentType = type;
+            currentServiceName = serviceName;
+            modalTitle.innerText = serviceName;
+            formFields.innerHTML = '';
+
+            if (type === 'shipping') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>اسم المرسل:</label><input type="text" id="senderName" required placeholder="أدخل اسم المرسل"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
+                    <div class="form-group"><label>دولة الإرسال:</label><input type="text" id="fromCountry" required placeholder="مثال: اليمن"></div>
+                    <div class="form-group"><label>دولة الوصول:</label><input type="text" id="toCountry" required placeholder="مثال: الإمارات"></div>
+                    <div class="form-group"><label>نوع الشحنة:</label><input type="text" id="cargoType" required placeholder="عسل، بضائع، طرد..."></div>
+                    <div class="form-group"><label>الوزن التقريبي:</label><input type="text" id="weight" placeholder="مثال: 10 كجم"></div>
+                    <div class="form-group"><label>عدد الطرود:</label><input type="number" id="packagesCount" min="1" value="1"></div>
+                    <div class="form-group"><label>القيمة التقريبية:</label><input type="text" id="approxValue" placeholder="مثال: 500 دولار"></div>
+                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="أي تفاصيل أخرى"></textarea></div>
+                `;
+            } else if (type === 'land_transport') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم:</label><input type="text" id="custName" required placeholder="أدخل الاسم"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
+                    <div class="form-group"><label>مدينة الانطلاق:</label><input type="text" id="fromCity" required placeholder="مثال: صنعاء"></div>
+                    <div class="form-group"><label>مدينة الوصول:</label><input type="text" id="toCity" required placeholder="مثال: الرياض"></div>
+                    <div class="form-group"><label>تاريخ الرحلة:</label><input type="date" id="travelDate" required></div>
+                    <div class="form-group"><label>عدد الركاب:</label><input type="number" id="passengersCount" min="1" value="1" required></div>
+                    <div class="form-group"><label>نوع السيارة:</label><input type="text" id="carType" placeholder="فورويل، باص، صالون..."></div>
+                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="تفاصيل إضافية"></textarea></div>
+                `;
+            } else if (type === 'umrah') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم:</label><input type="text" id="custName" required placeholder="أدخل الاسم"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
+                    <div class="form-group"><label>عدد المعتمرين:</label><input type="number" id="umrahCount" min="1" value="1" required></div>
+                    <div class="form-group"><label>تاريخ السفر:</label><input type="date" id="travelDate" required></div>
+                    <div class="form-group"><label>المدينة:</label><input type="text" id="city" required placeholder="مثال: صنعاء / عدن"></div>
+                    <div class="form-group"><label>هل يوجد جواز؟</label>
+                        <select id="hasPassport">
+                            <option value="نعم">نعم</option>
+                            <option value="لا">لا</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="أي تفاصيل أخرى"></textarea></div>
+                `;
+            } else if (type === 'flight') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم:</label><input type="text" id="custName" required placeholder="أدخل الاسم"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم التواصل"></div>
+                    <div class="form-group"><label>من:</label><input type="text" id="fromCity" required placeholder="مثال: عدن"></div>
+                    <div class="form-group"><label>إلى:</label><input type="text" id="toCity" required placeholder="مثال: القاهرة"></div>
+                    <div class="form-group"><label>تاريخ السفر:</label><input type="date" id="travelDate" required></div>
+                    <div class="form-group"><label>عدد المسافرين:</label><input type="number" id="passengersCount" min="1" value="1"></div>
+                    <div class="form-group"><label>نوع الرحلة:</label>
+                        <select id="flightType">
+                            <option value="ذهاب وعودة">ذهاب وعودة</option>
+                            <option value="ذهاب فقط">ذهاب فقط</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="ملاحظات أخرى"></textarea></div>
+                `;
+            } else if (type === 'visa_oman') {
+                formFields.innerHTML = `
+                    <div class="form-group"><label>الاسم:</label><input type="text" id="custName" required placeholder="أدخل الاسم كاملاً"></div>
+                    <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
+                    <div class="form-group"><label>نوع التأشيرة المطلوب:</label>
+                        <select id="visaType">
+                            <option value="زيارة 21 يوم">زيارة 21 يوم</option>
+                            <option value="زيارة 3 أشهر متعددة">زيارة 3 أشهر متعددة</option>
+                            <option value="عبور 5 أيام">عبور 5 أيام</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="اسم الأم أو الغرض من الدخول"></textarea></div>
+                `;
+            }
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            let msg = `طلب جديد\n\n`;
+            msg += `الخدمة:\n${currentServiceName}\n\n`;
+
+            if (currentType === 'shipping') {
+                msg += `اسم المرسل:\n${document.getElementById('senderName').value}\n\n`;
+                msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `دولة الإرسال:\n${document.getElementById('fromCountry').value}\n\n`;
+                msg += `دولة الوصول:\n${document.getElementById('toCountry').value}\n\n`;
+                msg += `نوع الشحنة:\n${document.getElementById('cargoType').value}\n\n`;
+                msg += `الوزن التقريبي:\n${document.getElementById('weight').value || 'غير محدد'}\n\n`;
+                msg += `عدد الطرود:\n${document.getElementById('packagesCount').value}\n\n`;
+                msg += `القيمة التقريبية:\n${document.getElementById('approxValue').value || 'غير محدد'}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            } 
+            else if (currentType === 'land_transport') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
+                msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `مدينة الانطلاق:\n${document.getElementById('fromCity').value}\n\n`;
+                msg += `مدينة الوصول:\n${document.getElementById('toCity').value}\n\n`;
+                msg += `تاريخ الرحلة:\n${document.getElementById('travelDate').value}\n\n`;
+                msg += `عدد الركاب:\n${document.getElementById('passengersCount').value}\n\n`;
+                msg += `نوع السيارة:\n${document.getElementById('carType').value || 'غير محدد'}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            } 
+            else if (currentType === 'umrah') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
+                msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `عدد المعتمرين:\n${document.getElementById('umrahCount').value}\n\n`;
+                msg += `تاريخ السفر:\n${document.getElementById('travelDate').value}\n\n`;
+                msg += `المدينة:\n${document.getElementById('city').value}\n\n`;
+                msg += `هل يوجد جواز؟:\n${document.getElementById('hasPassport').value}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            } 
+            else if (currentType === 'flight') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
+                msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `من:\n${document.getElementById('fromCity').value}\n\n`;
+                msg += `إلى:\n${document.getElementById('toCity').value}\n\n`;
+                msg += `تاريخ السفر:\n${document.getElementById('travelDate').value}\n\n`;
+                msg += `عدد المسافرين:\n${document.getElementById('passengersCount').value}\n\n`;
+                msg += `نوع الرحلة:\n${document.getElementById('flightType').value}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            }
+            else if (currentType === 'visa_oman') {
+                msg += `الاسم:\n${document.getElementById('custName').value}\n\n`;
+                msg += `الهاتف:\n${document.getElementById('phone').value}\n\n`;
+                msg += `نوع التأشيرة:\n${document.getElementById('visaType').value}\n\n`;
+                msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
+            }
+
+            const whatsappNumber = "967782111532";
+            const encodedUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`;
+            
+            window.open(encodedUrl, '_blank');
+            closeModal();
+        }
+    </script>
 </body>
 </html>
