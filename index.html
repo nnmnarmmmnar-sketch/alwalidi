@@ -72,7 +72,7 @@
         /* Header Section */
         .header {
             text-align: center;
-            padding: 10px 5px 20px 5px;
+            padding: 10px 5px 15px 5px;
         }
 
         .header h1 {
@@ -89,13 +89,38 @@
             line-height: 1.5;
         }
 
+        /* Audio Player Box */
+        .audio-container {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(0, 132, 255, 0.3);
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .audio-container p {
+            font-size: 0.85rem;
+            color: #1e90ff;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .audio-container audio {
+            width: 100%;
+            max-width: 500px;
+            height: 40px;
+            outline: none;
+        }
+
         /* Hero Banner */
         .hero-banner {
             position: relative;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1000') center/cover no-repeat;
+                        url('beach.jpg') center/cover no-repeat;
             border-radius: 12px;
-            height: 200px;
+            height: 220px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -162,7 +187,7 @@
 
         .card-img {
             width: 100%;
-            height: 120px;
+            height: 140px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 10px;
@@ -453,7 +478,7 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook">
         </a>
 
-        <!-- زر تيليجرام (تم تحديث الرابط) -->
+        <!-- زر تيليجرام -->
         <a href="Https://t.me/Offices_AlWalidi_bot" target="_blank" class="social-btn telegram" title="تيليجرام">
             <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
         </a>
@@ -469,6 +494,15 @@
         <h1>.: شركة ومكاتب الوليدي للسفريات والسياحة والخدمات اللوجستية وخدمات النقل والشحن المحلي والدولي الى أنحاء العالم</h1>
         <p>.: من اليمن الى جميع أنحاء العالم والعكس/ مكاتب الوليدي للتصدير والاستيراد والتخليص الجمركي الى جميع أنحاء العالم ومن اي دولة في العالم الى الجمهورية اليمنية الشحن البري والجوي والبحري</p>
     </header>
+
+    <!-- Audio Player Section (المقطع الصوتي في بداية الصفحة) -->
+    <div class="audio-container">
+        <p>🎧 استمع إلى نبذة تعريفية عن خدمات الشركة:</p>
+        <audio controls>
+            <source src="welcome.mp3" type="audio/mpeg">
+            متصفحك لا يدعم تشغيل الصوت.
+        </audio>
+    </div>
 
     <!-- Hero Banner -->
     <div class="hero-banner">
@@ -490,7 +524,7 @@
     <div class="grid-container">
         <!-- Four Wheel Card -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600" alt="سيارة فورويل" class="card-img">
+            <img src="cars.jpg" alt="رحلات آمنة وممتعة" class="card-img">
             <div>
                 <h3>رحلات آمنة وممتعة (سيارات فورويل حديثة) 🚘</h3>
                 <p>
@@ -504,9 +538,9 @@
             <button class="btn" onclick="openModal('land_transport', 'رحلات برية (فورويل حديثة)')">احجز رحلتك الان</button>
         </div>
 
-        <!-- Bus Card -->
+        <!-- Bus/Truck Card -->
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?q=80&w=800" alt="حافلة لنقل الركاب" class="card-img">
+            <img src="truck.jpg" alt="نقل ركاب بأحدث السيارات" class="card-img">
             <div>
                 <h3>نقل ركاب بأحدث السيارات والأسطول الحديث 🚌</h3>
                 <p>رحلات يومية ومستمرة من اليمن إلى عمان، السعودية والإمارات والعكس. حجز طيران، حج وعمرة، جوازات، تأشيرات، وشحن محلي ودولي معتمد.</p>
@@ -515,9 +549,9 @@
         </div>
     </div>
 
-    <!-- Toyota Truck Full Card -->
+    <!-- Toyota Truck Full Card (محدث مع الصورة الرابعة cars2.jpg) -->
     <div class="full-card">
-        <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?q=80&w=1000" alt="سيارات حديثة">
+        <img src="cars2.jpg" alt="سيارات حديثة وسائقون محترفون">
         <div class="full-card-content">
             <h3>سيارات حديثة وسائقون محترفون 🛣️</h3>
             <p>راحتك في رحلتك تبدأ من أول خطوة! سفر مريح وأسعار تنافسية مصممة خصيصاً لراحتك.</p>
@@ -525,9 +559,9 @@
         </div>
     </div>
 
-    <!-- Beach Full Card -->
+    <!-- Beach Full Card (محدث مع الصورة الخامسة cars3.jpg) -->
     <div class="full-card">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1000" alt="شاطئ وسياحة">
+        <img src="cars3.jpg" alt="نختار لك الأفضل">
         <div class="full-card-content">
             <h3>نختار لك الأفضل (طيران، فنادق، تنقلات) 🏨</h3>
             <p>
@@ -574,7 +608,7 @@
             <div>
                 <h3>الموافقات الأمنية 📜</h3>
                 <p>
-                    تسهيل واستخراج الموافقات الأمنية وتصاريح السفر لمصر والأردن بسرعة وكفاءة عالية.
+                    تسهيل واستخرج الموافقات الأمنية وتصاريح السفر لمصر والأردن بسرعة وكفاءة عالية.
                 </p>
             </div>
             <button class="btn" onclick="openSecurityApprovalOptions()">طلب موافقة أمنية</button>
