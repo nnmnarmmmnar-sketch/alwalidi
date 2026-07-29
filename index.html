@@ -206,6 +206,29 @@
             margin-bottom: 12px;
         }
 
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 12px 0;
+        }
+
+        .card ul li {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+            line-height: 1.5;
+            margin-bottom: 4px;
+            position: relative;
+            padding-right: 12px;
+        }
+
+        .card ul li::before {
+            content: "•";
+            color: var(--accent-blue);
+            position: absolute;
+            right: 0;
+            font-weight: bold;
+        }
+
         /* Full Width Card */
         .full-card {
             background-color: var(--card-bg);
@@ -514,13 +537,74 @@
 
     <!-- Hero Banner -->
     <div class="hero-banner">
-        <h2>كل وجهة أقرب | خدمات سفر وشحن ونقل متكاملة</h2>
-        <p>نسهل لك إجراءات المعاملات بأعلى سرعة وأقل تكلفة</p>
+        <h2>العالم بين يديك.. من اليمن إلى كافة أنحاء العالم، ومن كل دول العالم إلى اليمن!</h2>
+        <p>هل تبحث عن الأمان المطلق والشريك الموثوق لتجارتك؟ أم ترغب في شحن أماناتك وسفر مريح؟ مكاتب الوليدي تضع أسطولها وخبرتها الدولية بين يديك لتقديم حلول شحن ونقل متكاملة بدون أي استثناء.</p>
     </div>
 
     <!-- Announcement Bar -->
     <div class="announcement-bar">
         كل وجهه اقرب /خدمات سفر متميزة /برامج سياحيه منظمه /خدمات شحن آمنه /خدمات نقل متكامله /كل ما عليك هو تحديد وجهتك أو شحنتك وعلينا الباقي 😍
+    </div>
+
+    <!-- Section Title: Export, Import & Shipping -->
+    <div class="sub-title">📦 قسم التصدير والاستيراد والشحن البحري والجوي والبري (الصين، كوريا، ودول العالم)</div>
+
+    <div class="grid-container-3">
+        <!-- Import & Mega Projects -->
+        <div class="card">
+            <div>
+                <h3>🏗️ قسم الاستيراد وتأسيس المشاريع العملاقة (الصين 🇨🇳 & كوريا 🇰🇷)</h3>
+                <p>بوابتكم المباشرة للاستيراد بأسعار المصنع من فروعنا الدولية إلى اليمن وكافة الدول العربية:</p>
+                <ul>
+                    <li>المعدات الثقيلة والإنشائية: بوكلينات، بلدوزرات، رافعات، شياول، ومعدات حفر الآبار.</li>
+                    <li>المكائن الصناعية والآليات: خطوط الإنتاج المتكاملة، مكائن التعبئة والتغليف، والورش والمصانع والمكائن بمختلف قدراتها.</li>
+                    <li>وسائل النقل والآليات الثقيلة: استيراد القواطر، اللوابد (الإيبادات)، السطحات، الدينات، والشاحنات بجميع أنواعها.</li>
+                    <li>السيارات وقطع الغيار: توريد السيارات الحديثة، الكهربائية، والهايبرد، وكافة قطع غيار المعدات الثقيلة والخفيفة، وقطع غيار السيارات، الحافلات والشاحنات الأصلية والتجارية ⚙️.</li>
+                    <li>المواصير، الألمنيوم ومواد البناء: مواصير المياه والصرف الصحي، قطاعات الألمنيوم للمطابخ والأبواب والنوافذ، وكافة مواد البناء (حديد، سيراميك، بورسلين، أسمنت، مواد عزل، وأدوات صحية).</li>
+                    <li>الأدوات المنزلية والكماليات: أدوات المطبخ والطهي، الأواني المنزلية بجميع خاماتها (ستانلس ستيل، تيفال، جرانيت، سيراميك)، أدوات التنظيم والتخزين، والأجهزة المنزلية الخفيفة.</li>
+                    <li>البضائع بجميع أنواعها: منسوجات وأقمشة وملابس، إلكترونيات وتقنية، مواد كهربائية ومنظومات طاقة شمسية ⚡📱، ومستلزمات متاجر التوفير والتخفيضات.</li>
+                </ul>
+            </div>
+            <button class="btn" onclick="openImportOptions()">طلب استيراد وشحن</button>
+        </div>
+
+        <!-- Heavy Freight & General Shipping -->
+        <div class="card">
+            <div>
+                <h3>🚚 قسم النقل الثقيل والشحن العام (بري 🚛 - بحري 🚢 - جوي ✈️)</h3>
+                <p>نربط اليمن بجميع دول الخليج والعالم (ذهاباً وإياباً) عبر أسطولنا العملاق:</p>
+                <ul>
+                    <li>الشحن المبرد: برادات مجهزة لنقل المواد الغذائية، التموينية، والأدوية بدقة عالية.</li>
+                    <li>تصدير المنتجات اليمنية: نصل بـ (العسل، البن، المكسرات، الجبن، الفواكه المجففة، والبهارات والتوابل) إلى الأسوق الخليجية والعالمية والصينية.</li>
+                    <li>الرسائل والطرود والعفش: نقل الأوراق الرسمية، الوثائق الهامة، الأمتعة الشخصية، الأثاث المنزلي والفندقي مع التغليف الاحترافي 🏠📄.</li>
+                </ul>
+            </div>
+            <button class="btn" onclick="openGeneralShippingOptions()">أرسل شحنتك الان</button>
+        </div>
+
+        <!-- E-Commerce Brokerage -->
+        <div class="card">
+            <div>
+                <h3>🛍️ قسم التسوق الإلكتروني (الوسيط الموثوق)</h3>
+                <p>استقبال طلبات شي إن (Shein) وأمازون (Amazon):</p>
+                <ul>
+                    <li>تسوق من المتاجر العالمية وسنصل بها إليك أينما كنت في اليمن بأسعار شحن منافسة.</li>
+                </ul>
+            </div>
+            <button class="btn" onclick="openModal('shipping', 'وساطة تسوق (شي إن / أمازون)')">طلب شراء وشحن</button>
+        </div>
+    </div>
+
+    <!-- Features Card: Why Choose Al-Walidi -->
+    <div class="full-card">
+        <div class="full-card-content">
+            <h3>✨ لماذا الوليدي هو خيارك الوحيد؟</h3>
+            <p>
+                • <b>معاينة وفحص الجودة:</b> نضمن مطابقة البضائع للمواصفات الفنية في الصين وكوريا قبل الشحن. ✅<br>
+                • <b>تخليص جمركي محترف:</b> إنهاء المعاملات القانونية في كافة الموانئ والمنافذ البرية بسرعة قياسية. ⚖️<br>
+                • <b>من الباب إلى الباب:</b> استلام مباشر من المصنع أو عنوانك، وتسليم في الموقع المطلوب. 🏠
+            </p>
+        </div>
     </div>
 
     <!-- Section Title -->
@@ -532,7 +616,7 @@
     <div class="grid-container">
         <!-- Four Wheel Card -->
         <div class="card">
-            <img src="cars.jpg" alt="رحلات آمنة وممتعة" class="card-img" onerror="this.src='cars2.jpg'">
+            <img src="cars5.jpg" alt="رحلات آمنة وممتعة" class="card-img" onerror="this.src='cars2.jpg'">
             <div>
                 <h3>رحلات آمنة وممتعة (سيارات فورويل حديثة) 🚘</h3>
                 <p>
@@ -655,7 +739,7 @@
                     <b>المطلوب:</b> اسم المرسل والمستلم، نوع الشحنة، الوزن، وصورة الشحنة.
                 </p>
             </div>
-            <button class="btn" onclick="openShippingOptions()">أرسل شحنتك</button>
+            <button class="btn" onclick="openGeneralShippingOptions()">أرسل شحنتك</button>
         </div>
     </div>
 
@@ -686,34 +770,41 @@
     </div>
 
     <!-- Branches Section -->
-    <div class="sub-title">🏢 فروع مكاتب وشركات الوليدي للسفريات والسياحة والخدمات اللوجستية</div>
+    <div class="sub-title">📍 فروعنا ومراكز الاستلام الدولية والمحلية</div>
 
     <div class="branches-container">
+        <!-- International Branch: China -->
+        <div class="branch-card" style="border-right-color: #ff4d4f;">
+            <h3>🇨🇳 فرع الصين - (شنغهاي)</h3>
+            <p class="address">📍 العنوان: منطقة جيا دينغ - طريق بولي رقم 70 - المبنى 36 - الطابق الرابع - الغرفة رقم JT9155.</p>
+            <p class="contact-num">أرقام التواصل: 774976365 / +96893893413 / 782087250</p>
+        </div>
+
         <!-- Branch 1 -->
         <div class="branch-card">
-            <h3>1️⃣ المركز الرئيسي - المهرة</h3>
-            <p class="address">📍 العنوان: شحن، المثلث، المحطة، فرزة صنعاء، مقابل فرزة الغيضه.</p>
+            <h3>🇰🇷 🚩 المركز الرئيسي - المهرة</h3>
+            <p class="address">📍 العنوان: شحن، المثلث، فرزة شحن سيئون (المحطة، فرزة صنعاء، مقابل فرزة الغيضه).</p>
             <p class="contact-num">أرقام التواصل: 774976365 / +96893893413 / 782087250</p>
         </div>
 
         <!-- Branch 2 -->
         <div class="branch-card">
-            <h3>2️⃣ فرع صلالة</h3>
-            <p class="address">📍 العنوان: مقابل السوق المركزي، جوار مكتب جيناكم.</p>
+            <h3>🚩 فرع صلالة ومسقط (سلطنة عُمان)</h3>
+            <p class="address">📍 العنوان: صلالة (مقابل السوق المركزي، جوار مكتب جيناكم) | مسقط (الإدارة العامة).</p>
             <p class="contact-num">أرقام التواصل: +96893893413 / 774976365</p>
         </div>
 
         <!-- Branch 3 -->
         <div class="branch-card">
-            <h3>3️⃣ فرع سيئون</h3>
+            <h3>🚩 فرع حضرموت (سيئون)</h3>
             <p class="address">📍 العنوان: فرزة شحن صنعاء، مقابل الاتصالات اليمنية.</p>
             <p class="contact-num">أرقام التواصل: +96893893413 / 774976365</p>
         </div>
 
         <!-- Branch 4 -->
         <div class="branch-card">
-            <h3>4️⃣ فرع صنعاء</h3>
-            <p class="address">📍 العنوان: شارع التلفزيون، أمام فندق ستارز.</p>
+            <h3>🚩 فرع صنعاء</h3>
+            <p class="address">📍 العنوان: شارع التلفزيون، أمام فندق فور ستارز السياحي - بجانب الجعدلي.</p>
             <p class="contact-num">أرقام التواصل: 782444619 / 774976365</p>
         </div>
     </div>
@@ -753,6 +844,44 @@
         let currentType = '';
         let currentServiceName = '';
         let backAction = null;
+
+        // 1. خيارات الاستيراد وتأسيس المشاريع
+        function openImportOptions() {
+            modalTitle.innerText = "قسم الاستيراد وتأسيس المشاريع (الصين & كوريا) 🏗️";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر نوع الاستيراد المطلوب:</p>
+                <div class="sub-options-grid">
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'استيراد معدات ثقيلة وإنشائية', openImportOptions)">معدات ثقيلة وإنشائية</button>
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'استيراد مكائن صناعية وخطوط إنتاج', openImportOptions)">مكائن صناعية وخطوط إنتاج</button>
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'استيراد سيارات وقطع غيار', openImportOptions)">سيارات وقطع غيار</button>
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'استيراد بضائع عامة ومواد بناء', openImportOptions)">بضائع عامة ومواد بناء</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // 2. خيارات النقل الثقيل والشحن العام
+        function openGeneralShippingOptions() {
+            modalTitle.innerText = "النقل الثقيل والشحن العام (بري - بحري - جوي) 🚚";
+            backBtn.style.display = 'none';
+            submitBtn.style.display = 'none';
+
+            formFields.innerHTML = `
+                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر نوع خدمة الشحن المطلوب:</p>
+                <div class="sub-options-grid">
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'شحن مبرد (مواد غذائية وأدوية)', openGeneralShippingOptions)">شحن مبرد</button>
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'تصدير العسل والمنتجات اليمنية', openGeneralShippingOptions)">تصدير المنتجات اليمنية والعسل</button>
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'شحن أثاث وعفش وطرود شخصية', openGeneralShippingOptions)">شحن أثاث وطرود ورسائل</button>
+                    <button type="button" class="option-btn" onclick="openModal('shipping', 'شحن حاويات وبضائع (بري/بحري/جوي)', openGeneralShippingOptions)">شحن حاويات عام</button>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
 
         // خيارات الحج والعمرة
         function openHajjUmrahOptions() {
@@ -909,23 +1038,6 @@
             modal.style.display = 'flex';
         }
 
-        // خيارات خدمة الشحن
-        function openShippingOptions() {
-            modalTitle.innerText = "الشحن الدولي والمحلي 📦";
-            backBtn.style.display = 'none';
-            submitBtn.style.display = 'none';
-
-            formFields.innerHTML = `
-                <p style="font-size:0.85rem; color: var(--text-sub); text-align:center;">اختر نوع خدمة الشحن المطلوب:</p>
-                <div class="sub-options-grid">
-                    <button type="button" class="option-btn" onclick="openModal('shipping', 'إرسال رسالة/طرد دولي', openShippingOptions)">إرسال رسالة/طرد دولي</button>
-                    <button type="button" class="option-btn" onclick="openModal('shipping', 'إرسال العسل والمنتجات اليمنية', openShippingOptions)">إرسال العسل والمنتجات اليمنية إلى جميع بلدان العالم</button>
-                </div>
-            `;
-
-            modal.style.display = 'flex';
-        }
-
         function handleBackAction() {
             if (typeof backAction === 'function') {
                 backAction();
@@ -1024,13 +1136,13 @@
             } 
             else if (type === 'shipping') {
                 formFields.innerHTML = `
-                    <div class="form-group"><label>اسم المرسل:</label><input type="text" id="senderName" required placeholder="أدخل اسم المرسل"></div>
+                    <div class="form-group"><label>اسم المرسل / العميل:</label><input type="text" id="senderName" required placeholder="أدخل اسم المرسل أو الطالب"></div>
                     <div class="form-group"><label>رقم الهاتف:</label><input type="tel" id="phone" required placeholder="رقم الهاتف"></div>
-                    <div class="form-group"><label>دولة الإرسال:</label><input type="text" id="fromCountry" required placeholder="مثال: اليمن"></div>
-                    <div class="form-group"><label>دولة الوصول:</label><input type="text" id="toCountry" required placeholder="مثال: الإمارات"></div>
-                    <div class="form-group"><label>نوع الشحنة:</label><input type="text" id="cargoType" required placeholder="عسل، بضائع، طرد..."></div>
-                    <div class="form-group"><label>الوزن التقريبي:</label><input type="text" id="weight" placeholder="مثال: 10 كجم"></div>
-                    <div class="form-group"><label>عدد الطرود:</label><input type="number" id="packagesCount" min="1" value="1" required></div>
+                    <div class="form-group"><label>دولة الإرسال / المصدر:</label><input type="text" id="fromCountry" required placeholder="مثال: الصين / اليمن"></div>
+                    <div class="form-group"><label>دولة الوصول / الوجهة:</label><input type="text" id="toCountry" required placeholder="مثال: اليمن / الإمارات / السعودية"></div>
+                    <div class="form-group"><label>تفاصيل الشحنة / البضاعة المطلوبة:</label><input type="text" id="cargoType" required placeholder="مثال: بوكلينات، خط إنتاج، طرد، طلبية شي إن..."></div>
+                    <div class="form-group"><label>الوزن أو الحجم التقريبي:</label><input type="text" id="weight" placeholder="مثال: 10 كجم / حاوية 40 قدم"></div>
+                    <div class="form-group"><label>عدد الطرود / الكمية:</label><input type="number" id="packagesCount" min="1" value="1" required></div>
                     <div class="form-group"><label>القيمة التقريبية:</label><input type="text" id="approxValue" placeholder="مثال: 500 دولار"></div>
                     <div class="form-group"><label>ملاحظات:</label><textarea id="notes" rows="2" placeholder="أي تفاصيل أخرى"></textarea></div>
                 `;
@@ -1117,13 +1229,13 @@
                 msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
             } 
             else if (currentType === 'shipping') {
-                msg += `اسم المرسل:\n${document.getElementById('senderName').value}\n\n`;
+                msg += `اسم المرسل/العميل:\n${document.getElementById('senderName').value}\n\n`;
                 msg += `رقم الهاتف:\n${document.getElementById('phone').value}\n\n`;
-                msg += `دولة الإرسال:\n${document.getElementById('fromCountry').value}\n\n`;
-                msg += `دولة الوصول:\n${document.getElementById('toCountry').value}\n\n`;
-                msg += `نوع الشحنة:\n${document.getElementById('cargoType').value}\n\n`;
-                msg += `الوزن التقريبي:\n${document.getElementById('weight').value || 'غير محدد'}\n\n`;
-                msg += `عدد الطرود:\n${document.getElementById('packagesCount').value}\n\n`;
+                msg += `دولة الإرسال/المصدر:\n${document.getElementById('fromCountry').value}\n\n`;
+                msg += `دولة الوصول/الوجهة:\n${document.getElementById('toCountry').value}\n\n`;
+                msg += `تفاصيل البضاعة/الطلب:\n${document.getElementById('cargoType').value}\n\n`;
+                msg += `الوزن/الحجم التقريبي:\n${document.getElementById('weight').value || 'غير محدد'}\n\n`;
+                msg += `عدد الطرود/الكمية:\n${document.getElementById('packagesCount').value}\n\n`;
                 msg += `القيمة التقريبية:\n${document.getElementById('approxValue').value || 'غير محدد'}\n\n`;
                 msg += `ملاحظات:\n${document.getElementById('notes').value || 'لا يوجد'}`;
             } 
